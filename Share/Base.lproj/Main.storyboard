@@ -154,6 +154,15 @@
                                     <action selector="buttonRestaurants:" destination="XUJ-V1-tuI" eventType="touchUpInside" id="CRA-Ex-gyP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGm-H0-tGv">
+                                <rect key="frame" x="113" y="255" width="39" height="30"/>
+                                <state key="normal" title="News">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonNews:" destination="XUJ-V1-tuI" eventType="touchUpInside" id="aoX-Li-e1i"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siP-HN-pzj">
                                 <rect key="frame" x="113" y="187" width="96" height="30"/>
                                 <state key="normal" title="Entertainment">
@@ -162,15 +171,6 @@
                                 <connections>
                                     <action selector="Events:" destination="XUJ-V1-tuI" eventType="touchUpInside" id="7Zb-bb-fHe"/>
                                     <action selector="buttonEntertainment:" destination="XUJ-V1-tuI" eventType="touchUpInside" id="9gr-bm-mQ4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGm-H0-tGv">
-                                <rect key="frame" x="113" y="255" width="39" height="30"/>
-                                <state key="normal" title="News">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonNews:" destination="XUJ-V1-tuI" eventType="touchUpInside" id="aoX-Li-e1i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -200,20 +200,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUC-CE-mhH">
-                                <rect key="frame" x="16" y="439" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="0.0" y="439" width="132" height="30"/>
+                                <state key="normal" title="Back to Categories">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJw-1Y-Nbi">
-                                <rect key="frame" x="116" y="439" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II2-6s-O6K">
-                                <rect key="frame" x="217" y="439" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="140" y="439" width="100" height="30"/>
+                                <state key="normal" title="Add Comment">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -229,6 +223,12 @@
                                     <barButtonItem title="Item" id="8eW-6Q-oRj"/>
                                 </items>
                             </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IiC-ed-w65">
+                                <rect key="frame" x="16" y="501" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem title="List" id="spz-7N-gsj"/>
+                                </items>
+                            </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qWa-ae-T2O">
                                 <rect key="frame" x="116" y="501" width="320" height="44"/>
                                 <items>
@@ -241,12 +241,12 @@
                                     <barButtonItem title="Search" id="3ua-Bs-ppu"/>
                                 </items>
                             </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IiC-ed-w65">
-                                <rect key="frame" x="16" y="501" width="320" height="44"/>
-                                <items>
-                                    <barButtonItem title="List" id="spz-7N-gsj"/>
-                                </items>
-                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II2-6s-O6K">
+                                <rect key="frame" x="258" y="439" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
