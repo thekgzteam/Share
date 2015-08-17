@@ -24,9 +24,10 @@
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     loginButton.center = CGPointMake(160.0, 380.0);
     [self.view addSubview:loginButton];
+
     PFUser *user = [PFUser user];
-    user.username = @"my name";
-    user.password = @"my pass";
+    user.username = self.usernameTextfield.text;
+    user.password = self.passwordTextfield.text;
     user.email = @"email@example.com";
 
     // other fields can be set if you want to save more information
@@ -40,11 +41,16 @@
             // Show the errorString somewhere and let the user try again.
         }
     }];
-//
+
+
 //
 //        self.usernameTextfield.text = @"PlaceholderText";
 //        self.usernameTextfield.delegate = self;
 //        self.usernameTextfield.textColor = [UIColor darkGrayColor];
+
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 
 }
 @end
