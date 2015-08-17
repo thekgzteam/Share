@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-
+#import <Parse/Parse.h>
 @interface AppDelegate ()
 
 @end
@@ -19,6 +19,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
+
+    [Parse setApplicationId:@"N5M0nAmG3i693RZBIG8gygzgc6EvHngRcp2SLELf"
+                  clientKey:@"WU1GJkLPJBD5FVkChIMKs5HbBKIZQEEcd8icrnFd"];
+
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 }
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
@@ -32,6 +37,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [FBSDKAppEvents activateApp];
+
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
