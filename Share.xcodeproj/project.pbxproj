@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1971F3BD1B8289B900877FEC /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971F3BC1B8289B900877FEC /* CategoriesViewController.m */; };
+		1971F3C01B828D3200877FEC /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971F3BF1B828D3200877FEC /* MapViewController.m */; };
 		FD22A65C1B824FB8001C30E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A65B1B824FB8001C30E4 /* main.m */; };
 		FD22A65F1B824FB8001C30E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A65E1B824FB8001C30E4 /* AppDelegate.m */; };
 		FD22A6621B824FB8001C30E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A6611B824FB8001C30E4 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* Begin PBXFileReference section */
 		1971F3BB1B8289B900877FEC /* CategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		1971F3BC1B8289B900877FEC /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
+		1971F3BE1B828D3200877FEC /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		1971F3BF1B828D3200877FEC /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		FD22A6561B824FB8001C30E4 /* Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Share.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD22A65A1B824FB8001C30E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD22A65B1B824FB8001C30E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				FD22A68E1B827E7B001C30E4 /* RegistrationViewController.h */,
 				FD22A68F1B827E7B001C30E4 /* RegistrationViewController.m */,
 				FD22A6631B824FB8001C30E4 /* Main.storyboard */,
+				1971F3BE1B828D3200877FEC /* MapViewController.h */,
+				1971F3BF1B828D3200877FEC /* MapViewController.m */,
 				1971F3BB1B8289B900877FEC /* CategoriesViewController.h */,
 				1971F3BC1B8289B900877FEC /* CategoriesViewController.m */,
 				FD22A6661B824FB9001C30E4 /* Images.xcassets */,
@@ -256,6 +261,7 @@
 				FD22A6621B824FB8001C30E4 /* ViewController.m in Sources */,
 				FD22A6901B827E7B001C30E4 /* RegistrationViewController.m in Sources */,
 				FD22A65F1B824FB8001C30E4 /* AppDelegate.m in Sources */,
+				1971F3C01B828D3200877FEC /* MapViewController.m in Sources */,
 				1971F3BD1B8289B900877FEC /* CategoriesViewController.m in Sources */,
 				FD22A65C1B824FB8001C30E4 /* main.m in Sources */,
 			);
