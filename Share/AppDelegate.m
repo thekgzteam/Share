@@ -17,13 +17,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                    didFinishLaunchingWithOptions:launchOptions];
 
     [Parse setApplicationId:@"N5M0nAmG3i693RZBIG8gygzgc6EvHngRcp2SLELf"
                   clientKey:@"WU1GJkLPJBD5FVkChIMKs5HbBKIZQEEcd8icrnFd"];
 
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                    didFinishLaunchingWithOptions:launchOptions];
+
+
 }
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
