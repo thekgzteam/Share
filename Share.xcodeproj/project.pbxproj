@@ -110,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD22A6801B825EBD001C30E4 /* MapKit.framework in Frameworks */,
 				FD22A6C31B829720001C30E4 /* AudioToolbox.framework in Frameworks */,
 				FD22A6C11B8296E4001C30E4 /* libsqlite3.dylib in Frameworks */,
 				FD22A6BF1B8296D4001C30E4 /* libz.dylib in Frameworks */,
@@ -133,7 +134,6 @@
 				FD22A6A71B829189001C30E4 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				FD22A6A51B829189001C30E4 /* ParseCrashReporting.framework in Frameworks */,
 				FD22A6A61B829189001C30E4 /* ParseFacebookUtils.framework in Frameworks */,
-				FD22A6801B825EBD001C30E4 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

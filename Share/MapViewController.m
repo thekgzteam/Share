@@ -7,8 +7,10 @@
 //
 
 #import "MapViewController.h"
-
+#import <mapKit/mapKit.h>
 @interface MapViewController ()
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property MKPointAnnotation *chicagoIlannotation;
 
 @end
 
@@ -19,7 +21,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    double latitude = 41.90;
+    double longitude = 87.65;
+
+    self.chicagoIlannotation = [MKPointAnnotation new];
+    self.chicagoIlannotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+    [self.mapView addAnnotation:self.chicagoIlannotation];
+
+
 }
 
 - (void)didReceiveMemoryWarning {
