@@ -41,23 +41,28 @@
     [self.mapView addAnnotation: self.chicagoIlannotation];
     self.mapView.showsUserLocation = true;
 
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = 2.0; //length of user press
+    [self.mapView addGestureRecognizer:lpgr];
+
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)handleLongPress:(UIGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer.state != UIGestureRecognizerStateBegan)
+        return;
+
+    CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];
+    CLLocationCoordinate2D touchMapCoordinate =
+    [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
+
+    MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
+    annot.coordinate = touchMapCoordinate;
+    [self.mapView addAnnotation:annot];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-//-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
-//}
+
 
 @end
