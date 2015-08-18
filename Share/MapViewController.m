@@ -8,10 +8,12 @@
 
 #import "MapViewController.h"
 #import <mapKit/mapKit.h>
-@interface MapViewController ()
+
+@interface MapViewController ()<MKMapViewDelegate>
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property MKPointAnnotation *chicagoIlannotation;
-
+@property CLLocationManager *locationManager;
 @end
 
 @implementation MapViewController
@@ -30,10 +32,14 @@
     double latitude = 41.90;
     double longitude = 87.65;
 
+    self.locationManager = [CLLocationManager new];
+    [self.locationManager requestWhenInUseAuthorization];
+
+    self.mapView.delegate = self;
     self.chicagoIlannotation = [MKPointAnnotation new];
     self.chicagoIlannotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude);
-    [self.mapView addAnnotation:self.chicagoIlannotation];
-
+    [self.mapView addAnnotation: self.chicagoIlannotation];
+    self.mapView.showsUserLocation = true;
 
 }
 
@@ -51,5 +57,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+
+}
 
 @end
