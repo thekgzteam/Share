@@ -33,7 +33,7 @@ CategoriesViewController
 
 - (IBAction)logOutButton:(id)sender {
     [PFUser logOut];
-   
+
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

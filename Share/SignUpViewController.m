@@ -81,7 +81,7 @@
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Warning" message:@"Registration success!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
 
-            [self performSegueWithIdentifier:@"signin" sender:self];
+            [self performSegueWithIdentifier:@"registerSegue" sender:self];
         }
         else {
             NSLog(@"There was an error in registration");

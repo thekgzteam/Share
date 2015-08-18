@@ -84,7 +84,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButton:" destination="Idc-V8-vdW" eventType="touchUpInside" id="OIR-P3-4dg"/>
-                                    <segue destination="XUJ-V1-tuI" kind="push" identifier="SIngIn" id="1ok-JH-Me1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPl-yV-OqH">
@@ -128,6 +127,7 @@
                     <connections>
                         <outlet property="passwordTextfield" destination="BKm-Pu-fpJ" id="Emr-6W-rPA"/>
                         <outlet property="usernameTextfield" destination="rcT-Qd-60B" id="wtX-QH-nJw"/>
+                        <segue destination="XUJ-V1-tuI" kind="modal" identifier="signin" id="6yK-Qu-Kce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W75-F6-YOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,11 +185,12 @@
                         <outlet property="reenterPasswordTextfield" destination="M8M-Px-stW" id="0nS-E4-dD4"/>
                         <outlet property="registerButton" destination="RFm-yn-bdm" id="hEJ-s2-jv4"/>
                         <outlet property="usernameTextfield" destination="q0i-dc-WFr" id="xpS-08-3Es"/>
+                        <segue destination="XUJ-V1-tuI" kind="modal" identifier="registerSegue" id="pKI-d0-TRj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJZ-YK-caJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1247" y="988"/>
+            <point key="canvasLocation" x="1247" y="1081"/>
         </scene>
         <!--Categories View Controller-->
         <scene sceneID="7yV-ax-zgO">
@@ -359,4 +360,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="6yK-Qu-Kce"/>
+    </inferredMetricsTieBreakers>
 </document>

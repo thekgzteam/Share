@@ -26,6 +26,7 @@
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     loginButton.center = CGPointMake(160.0, 380.0);
     [self.view addSubview:loginButton];
+//    [self performSegueWithIdentifier:@"signin" sender:self];
 
     PFUser *user = [PFUser user];
     user.username = self.usernameTextfield.text;
@@ -67,8 +68,8 @@
             [alert show];
         }
         else {
+            [self performSegueWithIdentifier:@"signin" sender:self];
             NSLog(@"Login user!");
-            [self performSegueWithIdentifier:@"login" sender:self];
         }
     }];
 
