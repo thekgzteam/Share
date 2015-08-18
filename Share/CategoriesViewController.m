@@ -7,7 +7,6 @@
 //
 
 #import "CategoriesViewController.h"
-
 @interface CategoriesViewController ()
 
 @end
@@ -27,20 +26,16 @@ CategoriesViewController
 
 
 
-
-
-
-
-
-
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
 }
 
+- (IBAction)logOutButton:(id)sender {
+    [PFUser logOut];
+   
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 
