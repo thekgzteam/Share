@@ -57,8 +57,7 @@
     // Pass the selected object to the new view controller.
 }
 */
--(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
-
-}
+//-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+//}
 
 @end

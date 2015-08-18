@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1971F3BD1B8289B900877FEC /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971F3BC1B8289B900877FEC /* CategoriesViewController.m */; };
 		1971F3C01B828D3200877FEC /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971F3BF1B828D3200877FEC /* MapViewController.m */; };
+		FD1CC7151B8397C7003CE77A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC7141B8397C7003CE77A /* TableViewController.m */; };
+		FD1CC71B1B83A148003CE77A /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC71A1B83A148003CE77A /* TableViewCell.m */; };
 		FD22A65C1B824FB8001C30E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A65B1B824FB8001C30E4 /* main.m */; };
 		FD22A65F1B824FB8001C30E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A65E1B824FB8001C30E4 /* AppDelegate.m */; };
 		FD22A6621B824FB8001C30E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A6611B824FB8001C30E4 /* ViewController.m */; };
@@ -60,6 +62,10 @@
 		1971F3BC1B8289B900877FEC /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		1971F3BE1B828D3200877FEC /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		1971F3BF1B828D3200877FEC /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		FD1CC7131B8397C7003CE77A /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		FD1CC7141B8397C7003CE77A /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		FD1CC7191B83A148003CE77A /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		FD1CC71A1B83A148003CE77A /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		FD22A6561B824FB8001C30E4 /* Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Share.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD22A65A1B824FB8001C30E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD22A65B1B824FB8001C30E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -179,6 +185,10 @@
 				FD22A6C41B8299E6001C30E4 /* User.h */,
 				FD22A6C51B8299E6001C30E4 /* User.m */,
 				FD22A6631B824FB8001C30E4 /* Main.storyboard */,
+				FD1CC7131B8397C7003CE77A /* TableViewController.h */,
+				FD1CC7141B8397C7003CE77A /* TableViewController.m */,
+				FD1CC7191B83A148003CE77A /* TableViewCell.h */,
+				FD1CC71A1B83A148003CE77A /* TableViewCell.m */,
 				1971F3BE1B828D3200877FEC /* MapViewController.h */,
 				1971F3BF1B828D3200877FEC /* MapViewController.m */,
 				1971F3BB1B8289B900877FEC /* CategoriesViewController.h */,
@@ -360,7 +370,9 @@
 				FD22A6621B824FB8001C30E4 /* ViewController.m in Sources */,
 				FD22A6C61B8299E6001C30E4 /* User.m in Sources */,
 				FD22A6901B827E7B001C30E4 /* RegistrationViewController.m in Sources */,
+				FD1CC71B1B83A148003CE77A /* TableViewCell.m in Sources */,
 				FD22A65F1B824FB8001C30E4 /* AppDelegate.m in Sources */,
+				FD1CC7151B8397C7003CE77A /* TableViewController.m in Sources */,
 				1971F3C01B828D3200877FEC /* MapViewController.m in Sources */,
 				1971F3BD1B8289B900877FEC /* CategoriesViewController.m in Sources */,
 				FD22A6C91B82C831001C30E4 /* SignUpViewController.m in Sources */,
