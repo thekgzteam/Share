@@ -20,10 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.usernameTextfield resignFirstResponder];
+    [self.passwordTextfield resignFirstResponder]; 
 
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     loginButton.center = CGPointMake(160.0, 380.0);
     [self.view addSubview:loginButton];
+//    [self performSegueWithIdentifier:@"signin" sender:self];
 
     PFUser *user = [PFUser user];
     user.username = self.usernameTextfield.text;
@@ -51,6 +54,50 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+
+//    PFUser *user = [PFUser currentUser];
+//    if (user.username !=nil) {
+//    [self performSegueWithIdentifier:@"signin" sender:self];
+//    }
+}
+
+- (IBAction)loginButton:(id)sender {
+    [PFUser logInWithUsernameInBackground:self.usernameTextfield.text password:self.passwordTextfield.text block:^(PFUser *user, NSError *error){
+        if (error) {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Warning!" message:@"Sorry we had a problem logging you in" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+        else {
+            [self performSegueWithIdentifier:@"signin" sender:self];
+            NSLog(@"Login user!");
+        }
+    }];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 @end

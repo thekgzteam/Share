@@ -42,6 +42,7 @@
 		FD22A6C11B8296E4001C30E4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FD22A6C01B8296E4001C30E4 /* libsqlite3.dylib */; };
 		FD22A6C31B829720001C30E4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD22A6C21B829720001C30E4 /* AudioToolbox.framework */; };
 		FD22A6C61B8299E6001C30E4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A6C51B8299E6001C30E4 /* User.m */; };
+		FD22A6C91B82C831001C30E4 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A6C81B82C831001C30E4 /* SignUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,8 @@
 		FD22A6C21B829720001C30E4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FD22A6C41B8299E6001C30E4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		FD22A6C51B8299E6001C30E4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		FD22A6C71B82C831001C30E4 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		FD22A6C81B82C831001C30E4 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 				FD22A6611B824FB8001C30E4 /* ViewController.m */,
 				FD22A68E1B827E7B001C30E4 /* RegistrationViewController.h */,
 				FD22A68F1B827E7B001C30E4 /* RegistrationViewController.m */,
+				FD22A6C71B82C831001C30E4 /* SignUpViewController.h */,
+				FD22A6C81B82C831001C30E4 /* SignUpViewController.m */,
 				FD22A6C41B8299E6001C30E4 /* User.h */,
 				FD22A6C51B8299E6001C30E4 /* User.m */,
 				FD22A6631B824FB8001C30E4 /* Main.storyboard */,
@@ -358,6 +363,7 @@
 				FD22A65F1B824FB8001C30E4 /* AppDelegate.m in Sources */,
 				1971F3C01B828D3200877FEC /* MapViewController.m in Sources */,
 				1971F3BD1B8289B900877FEC /* CategoriesViewController.m in Sources */,
+				FD22A6C91B82C831001C30E4 /* SignUpViewController.m in Sources */,
 				FD22A65C1B824FB8001C30E4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
