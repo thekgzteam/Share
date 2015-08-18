@@ -15,6 +15,12 @@
 @end
 
 @implementation MapViewController
+- (IBAction)buttonList:(UIBarButtonItem *)sender {
+}
+- (IBAction)buttonMap:(UIBarButtonItem *)sender {
+}
+- (IBAction)buttonSearch:(UIBarButtonItem *)sender {
+}
 
 
 
