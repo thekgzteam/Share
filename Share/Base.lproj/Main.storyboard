@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="53g-zc-7rY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="53g-zc-7rY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -82,6 +82,9 @@
                                 <state key="normal" title="Log In">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="XUJ-V1-tuI" kind="push" id="aYa-rc-ggO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPl-yV-OqH">
                                 <rect key="frame" x="123" y="429" width="55" height="30"/>
@@ -161,6 +164,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonNews:" destination="XUJ-V1-tuI" eventType="touchUpInside" id="aoX-Li-e1i"/>
+                                    <segue destination="uBY-HR-pwp" kind="push" id="aDp-wS-MzT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siP-HN-pzj">
@@ -176,6 +180,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="lsL-4S-NS3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rh8-ZH-fd1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -193,24 +198,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fze-j1-4SE">
-                                <rect key="frame" x="139" y="40" width="35" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fze-j1-4SE">
+                                <rect key="frame" x="139" y="40" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUC-CE-mhH">
-                                <rect key="frame" x="0.0" y="439" width="132" height="30"/>
-                                <state key="normal" title="Back to Categories">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJw-1Y-Nbi">
-                                <rect key="frame" x="140" y="439" width="100" height="30"/>
-                                <state key="normal" title="Add Comment">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S9g-eX-Z4A">
                                 <rect key="frame" x="116" y="507" width="320" height="44"/>
                                 <items>
@@ -235,21 +228,28 @@
                                     <barButtonItem title="Map" id="1P2-EW-2fd"/>
                                 </items>
                             </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3sj-ab-0NN">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3sj-ab-0NN">
                                 <rect key="frame" x="211" y="501" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="Search" id="3ua-Bs-ppu"/>
                                 </items>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II2-6s-O6K">
-                                <rect key="frame" x="258" y="439" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6iw-c4-bzl">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="478"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3sj-ab-0NN" firstAttribute="top" secondItem="6iw-c4-bzl" secondAttribute="bottom" constant="23" id="Ozw-ep-Bas"/>
+                            <constraint firstItem="6iw-c4-bzl" firstAttribute="leading" secondItem="k7x-5J-Sq1" secondAttribute="leadingMargin" constant="-16" id="ZMs-WF-fZY"/>
+                            <constraint firstItem="6iw-c4-bzl" firstAttribute="top" secondItem="k7x-5J-Sq1" secondAttribute="topMargin" id="f9x-Va-K7g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6iw-c4-bzl" secondAttribute="trailing" constant="-16" id="rtX-nd-9Vz"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8ob-7n-pAq"/>
+                    <connections>
+                        <outlet property="mapView" destination="6iw-c4-bzl" id="RCz-PA-Eth"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1GH-u2-wpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
