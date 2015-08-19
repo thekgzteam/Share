@@ -61,8 +61,7 @@
     annot.coordinate = touchMapCoordinate;
     [self.mapView addAnnotation:annot];
 }
-
-
-
-
+-(IBAction)changeCategory:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

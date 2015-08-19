@@ -23,7 +23,7 @@
 }
 -(void)queryParseMethod {
     NSLog (@"start query");
-    PFQuery *query = [PFQuery queryWithClassName:@"collectionImage"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
@@ -47,7 +47,7 @@
        NSString *cellidentifier = @"imageCell";
         ImageCollectionViewCell *cell = (ImageCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellidentifier forIndexPath:indexPath];
         PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
-        PFFile *imageFile = [imageObject objectForKey:@"imageFile"];
+        PFFile *imageFile = [imageObject objectForKey:@"image"];
 
         [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {

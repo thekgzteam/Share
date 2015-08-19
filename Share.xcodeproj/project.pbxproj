@@ -48,6 +48,8 @@
 		FD22A6C91B82C831001C30E4 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A6C81B82C831001C30E4 /* SignUpViewController.m */; };
 		FDDFB15E1B8447310015EE4D /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFB15D1B8447310015EE4D /* ProfileCollectionViewCell.m */; };
 		FDDFB1611B84474F0015EE4D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFB1601B84474F0015EE4D /* ProfileViewController.m */; };
+		FDDFB1641B84DCC60015EE4D /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFB1631B84DCC60015EE4D /* ProfileTableViewCell.m */; };
+		FDDFB1691B850D2F0015EE4D /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFB1681B850D2F0015EE4D /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,10 @@
 		FDDFB15D1B8447310015EE4D /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		FDDFB15F1B84474F0015EE4D /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		FDDFB1601B84474F0015EE4D /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		FDDFB1621B84DCC60015EE4D /* ProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
+		FDDFB1631B84DCC60015EE4D /* ProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
+		FDDFB1671B850D2F0015EE4D /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchViewController.h; path = ../SearchViewController.h; sourceTree = "<group>"; };
+		FDDFB1681B850D2F0015EE4D /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchViewController.m; path = ../SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,7 @@
 		FD22A6581B824FB8001C30E4 /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				FDDFB16A1B850D4E0015EE4D /* Model */,
 				FD22A6631B824FB8001C30E4 /* Main.storyboard */,
 				FD22A65D1B824FB8001C30E4 /* AppDelegate.h */,
 				FD22A65E1B824FB8001C30E4 /* AppDelegate.m */,
@@ -190,8 +197,8 @@
 				FD22A6611B824FB8001C30E4 /* ViewController.m */,
 				FDDFB15F1B84474F0015EE4D /* ProfileViewController.h */,
 				FDDFB1601B84474F0015EE4D /* ProfileViewController.m */,
-				FDDFB15C1B8447310015EE4D /* ProfileCollectionViewCell.h */,
-				FDDFB15D1B8447310015EE4D /* ProfileCollectionViewCell.m */,
+				FDDFB1621B84DCC60015EE4D /* ProfileTableViewCell.h */,
+				FDDFB1631B84DCC60015EE4D /* ProfileTableViewCell.m */,
 				FD22A68E1B827E7B001C30E4 /* RegistrationViewController.h */,
 				FD22A68F1B827E7B001C30E4 /* RegistrationViewController.m */,
 				FD22A6C71B82C831001C30E4 /* SignUpViewController.h */,
@@ -202,12 +209,10 @@
 				1971F3BF1B828D3200877FEC /* MapViewController.m */,
 				FD1CC7131B8397C7003CE77A /* TableViewController.h */,
 				FD1CC7141B8397C7003CE77A /* TableViewController.m */,
-				FD1CC7191B83A148003CE77A /* TableViewCell.h */,
-				FD1CC71A1B83A148003CE77A /* TableViewCell.m */,
 				FD1CC71C1B83B731003CE77A /* ImageViewController.h */,
 				FD1CC71D1B83B731003CE77A /* ImageViewController.m */,
-				FD1CC71F1B83B794003CE77A /* ImageCollectionViewCell.h */,
-				FD1CC7201B83B794003CE77A /* ImageCollectionViewCell.m */,
+				FDDFB1671B850D2F0015EE4D /* SearchViewController.h */,
+				FDDFB1681B850D2F0015EE4D /* SearchViewController.m */,
 				FD22A6661B824FB9001C30E4 /* Images.xcassets */,
 				FD22A6681B824FB9001C30E4 /* LaunchScreen.xib */,
 				FD22A6591B824FB8001C30E4 /* Supporting Files */,
@@ -280,6 +285,19 @@
 			);
 			name = Parse;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		FDDFB16A1B850D4E0015EE4D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FDDFB15C1B8447310015EE4D /* ProfileCollectionViewCell.h */,
+				FDDFB15D1B8447310015EE4D /* ProfileCollectionViewCell.m */,
+				FD1CC7201B83B794003CE77A /* ImageCollectionViewCell.m */,
+				FD1CC71F1B83B794003CE77A /* ImageCollectionViewCell.h */,
+				FD1CC7191B83A148003CE77A /* TableViewCell.h */,
+				FD1CC71A1B83A148003CE77A /* TableViewCell.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,8 +407,10 @@
 				FD22A65F1B824FB8001C30E4 /* AppDelegate.m in Sources */,
 				FD1CC7151B8397C7003CE77A /* TableViewController.m in Sources */,
 				1971F3C01B828D3200877FEC /* MapViewController.m in Sources */,
+				FDDFB1691B850D2F0015EE4D /* SearchViewController.m in Sources */,
 				1971F3BD1B8289B900877FEC /* CategoriesViewController.m in Sources */,
 				FD22A6C91B82C831001C30E4 /* SignUpViewController.m in Sources */,
+				FDDFB1641B84DCC60015EE4D /* ProfileTableViewCell.m in Sources */,
 				FDDFB1611B84474F0015EE4D /* ProfileViewController.m in Sources */,
 				FD1CC7211B83B794003CE77A /* ImageCollectionViewCell.m in Sources */,
 				FDDFB15E1B8447310015EE4D /* ProfileCollectionViewCell.m in Sources */,

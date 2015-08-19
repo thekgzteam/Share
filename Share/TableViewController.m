@@ -10,6 +10,8 @@
 
 
 @interface TableViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *tableViewImageIcon;
+@property (weak, nonatomic) IBOutlet UILabel *tableViewLabel;
 
 @end
 
@@ -21,8 +23,9 @@
     
 }
 
+
     -(void) retrieveFromParse {
-        PFQuery *retrieveDescription = [PFQuery queryWithClassName:@"tableView"];
+        PFQuery *retrieveDescription = [PFQuery queryWithClassName:@"Post"];
 
         [retrieveDescription findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             if (!error) {
@@ -46,7 +49,11 @@
     UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"cellid"];
     PFObject *tempObject = [commentDescription objectAtIndex:indexPath.row];
 
-    cell.textLabel.text = [tempObject objectForKey:@"description"];
+    UIImage *foodImages = [UIImage imageNamed:@"food"];
+
+    cell.textLabel.text = [tempObject objectForKey:@"text"];
+//    cell.imageView.image = [tempObject objectForKey:@"image"];
+    cell.imageView.image = foodImages;
 
     return cell;
 
@@ -57,7 +64,7 @@
 }
 
 -(void)likeComment:(PFObject *)object {
-    [object addUniqueObject:[PFUser currentUser].objectId forKey:@"description"];
+    [object addUniqueObject:[PFUser currentUser].objectId forKey:@"comments"];
 
     [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error) {
@@ -81,7 +88,9 @@
     [alert show];
 }
 
-
+-(IBAction)goBackButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 

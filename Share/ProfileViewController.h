@@ -11,7 +11,10 @@
 @interface ProfileViewController : UIViewController {
 
     NSArray *imageFilesArray;
+    NSArray *commentDescription;
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionOfImages;
+@property (weak, nonatomic) IBOutlet UITableView *collectionOfComments;
+
 @end
 
