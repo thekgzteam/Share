@@ -17,8 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [self performSelector:@selector(retrieveFromParse)];
+    [self retrieveFromParse];
+    
 }
 
     -(void) retrieveFromParse {
@@ -31,7 +31,7 @@
             NSLog(@"%@", objects);
             [self.tableView reloadData];
         }];
-    }
+}
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -52,8 +52,34 @@
 
 }
 
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self likeComment:[commentDescription objectAtIndex:indexPath.row]];
+}
 
+-(void)likeComment:(PFObject *)object {
+    [object addUniqueObject:[PFUser currentUser].objectId forKey:@"description"];
 
+    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    NSLog(@"selected row!");
+                    [self likedSuccess];
+            }
+            else {
+                [self likedFail];
+            }
+        }];
+    }
+
+-(void) likedSuccess {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"You have added the comment to your profile" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+
+}
+
+-(void) likedFail {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Error adding the comment" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
 
 
 

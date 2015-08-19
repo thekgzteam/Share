@@ -8,13 +8,14 @@
 
 #import "ImageViewController.h"
 #import "ImageCollectionViewCell.h"
+
 @interface ImageViewController ()
 
 @end
 
 @implementation ImageViewController
 
-@synthesize imageCollection, loadingSpinner;
+//@synthesize imageCollection, loadingSpinner;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self queryParseMethod];
@@ -28,6 +29,7 @@
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
         }
         [self.imageCollection reloadData];
+        NSLog(@"Qeury is over");
     }];
 
 }
@@ -89,6 +91,11 @@
 }
 
 
+- (IBAction)gobackbutton:(id)sender {
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
 
 
 

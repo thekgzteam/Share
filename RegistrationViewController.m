@@ -44,14 +44,20 @@
             // Show the errorString somewhere and let the user try again.
         }
     }];
-
-
-//
-//        self.usernameTextfield.text = @"PlaceholderText";
-//        self.usernameTextfield.delegate = self;
-//        self.usernameTextfield.textColor = [UIColor darkGrayColor];
-
 }
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+
+        UITouch *touch = [[event allTouches] anyObject];
+        if ([self.usernameTextfield isFirstResponder] && [touch view] != self.usernameTextfield)
+            [self.usernameTextfield resignFirstResponder];
+            ([self.passwordTextfield isFirstResponder] && [touch view] != self.passwordTextfield); {
+                [self.passwordTextfield resignFirstResponder];
+        }
+        [super touchesBegan:touches withEvent:event];
+        }
+
+
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
