@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Edil Ashimov. All rights reserved.
 //
 
-#import "TableViewController.h"
+#import "AllCommentsListViewController.h"
 
 
-@interface TableViewController ()
+@interface AllCommentsListViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *tableViewImageIcon;
 @property (weak, nonatomic) IBOutlet UILabel *tableViewLabel;
 
 @end
 
-@implementation TableViewController
+@implementation AllCommentsListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,7 +49,7 @@
     UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"cellid"];
     PFObject *tempObject = [commentDescription objectAtIndex:indexPath.row];
 
-    UIImage *foodImages = [UIImage imageNamed:@"food"];
+   
 
     cell.textLabel.text = [tempObject objectForKey:@"text"];
 //    cell.imageView.image = [tempObject objectForKey:@"image"];

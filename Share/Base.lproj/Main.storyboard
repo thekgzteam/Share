@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="896" y="355"/>
         </scene>
-        <!--Registration View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="YCR-1g-KzI">
             <objects>
-                <viewController id="Idc-V8-vdW" customClass="RegistrationViewController" sceneMemberID="viewController">
+                <viewController id="Idc-V8-vdW" customClass="LogInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j8W-GV-LTy"/>
                         <viewControllerLayoutGuide type="bottom" id="hH3-d9-udn"/>
@@ -278,7 +278,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJA-z4-cqd">
                                 <rect key="frame" x="0.0" y="513" width="320" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="pca-AF-E37"/>
+                                    <constraint firstAttribute="height" constant="55" id="VP5-xH-Tnl"/>
                                 </constraints>
                                 <items>
                                     <barButtonItem width="9" style="plain" systemItem="fixedSpace" id="su0-iZ-7aG"/>
@@ -315,7 +315,7 @@
                             <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5H-El-1Nr">
                                 <rect key="frame" x="0.0" y="447" width="44" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="WIk-cX-TxK"/>
+                                    <constraint firstAttribute="width" constant="44" id="jUd-DD-FEg"/>
                                 </constraints>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="ChangeCategoryButton">
@@ -325,10 +325,10 @@
                                     <action selector="changeCategory:" destination="uBY-HR-pwp" eventType="touchUpInside" id="Rh5-zd-7mx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.59999999999999964" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUf-0s-tNC">
+                            <button opaque="NO" alpha="0.59999999999999964" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUf-0s-tNC">
                                 <rect key="frame" x="284" y="447" width="41" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="41" id="nxi-La-9FC"/>
+                                    <constraint firstAttribute="width" constant="41" id="mdY-jG-tCG"/>
                                 </constraints>
                                 <state key="normal" image="AddPostButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -337,19 +337,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="A5H-El-1Nr" firstAttribute="leading" secondItem="k7x-5J-Sq1" secondAttribute="leadingMargin" constant="-16" id="8qb-z6-Irc"/>
-                            <constraint firstItem="yUf-0s-tNC" firstAttribute="top" secondItem="hWk-7J-b95" secondAttribute="bottom" constant="427" id="E4N-OO-mB2"/>
-                            <constraint firstItem="aJA-z4-cqd" firstAttribute="top" secondItem="yUf-0s-tNC" secondAttribute="bottom" constant="24" id="OVW-sm-pC2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fkY-2h-B6z" secondAttribute="trailing" constant="-21" id="S3p-8s-mrI"/>
-                            <constraint firstAttribute="trailing" secondItem="aJA-z4-cqd" secondAttribute="trailing" id="Tq7-sq-kM7"/>
-                            <constraint firstItem="A5H-El-1Nr" firstAttribute="top" secondItem="yUf-0s-tNC" secondAttribute="top" id="X9p-2t-aaD"/>
-                            <constraint firstItem="aJA-z4-cqd" firstAttribute="leading" secondItem="k7x-5J-Sq1" secondAttribute="leading" id="boD-Jd-VHq"/>
-                            <constraint firstItem="fkY-2h-B6z" firstAttribute="top" secondItem="k7x-5J-Sq1" secondAttribute="top" id="jd4-CX-lvG"/>
-                            <constraint firstItem="aJA-z4-cqd" firstAttribute="top" secondItem="fkY-2h-B6z" secondAttribute="bottom" id="lGe-UK-cDz"/>
-                            <constraint firstItem="aJA-z4-cqd" firstAttribute="leading" secondItem="fkY-2h-B6z" secondAttribute="leading" id="lIz-mR-npy"/>
-                            <constraint firstItem="yUf-0s-tNC" firstAttribute="leading" secondItem="k7x-5J-Sq1" secondAttribute="leadingMargin" constant="266" id="lWQ-tb-01F"/>
-                            <constraint firstItem="aJA-z4-cqd" firstAttribute="bottom" secondItem="0MY-uC-uOR" secondAttribute="top" id="uBN-V8-p3c"/>
-                            <constraint firstItem="aJA-z4-cqd" firstAttribute="top" secondItem="A5H-El-1Nr" secondAttribute="bottom" constant="21" id="veU-oC-nah"/>
+                            <constraint firstItem="A5H-El-1Nr" firstAttribute="leading" secondItem="aJA-z4-cqd" secondAttribute="leading" id="BG4-sY-KyO"/>
+                            <constraint firstItem="fkY-2h-B6z" firstAttribute="top" secondItem="k7x-5J-Sq1" secondAttribute="top" id="Dzw-c9-yyq"/>
+                            <constraint firstItem="aJA-z4-cqd" firstAttribute="top" secondItem="yUf-0s-tNC" secondAttribute="bottom" constant="24" id="ELb-nM-BNr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fkY-2h-B6z" secondAttribute="trailing" constant="-21" id="FYK-0n-heH"/>
+                            <constraint firstItem="yUf-0s-tNC" firstAttribute="trailing" secondItem="fkY-2h-B6z" secondAttribute="trailing" id="IST-xM-t2a"/>
+                            <constraint firstItem="aJA-z4-cqd" firstAttribute="top" secondItem="A5H-El-1Nr" secondAttribute="bottom" constant="21" id="KIi-zT-Cet"/>
+                            <constraint firstAttribute="trailing" secondItem="aJA-z4-cqd" secondAttribute="trailing" id="R24-Ja-Ggo"/>
+                            <constraint firstItem="aJA-z4-cqd" firstAttribute="bottom" secondItem="0MY-uC-uOR" secondAttribute="top" id="TDe-ID-uL3"/>
+                            <constraint firstItem="aJA-z4-cqd" firstAttribute="leading" secondItem="k7x-5J-Sq1" secondAttribute="leading" id="Xze-KG-tdt"/>
+                            <constraint firstItem="yUf-0s-tNC" firstAttribute="top" secondItem="A5H-El-1Nr" secondAttribute="top" id="Y3t-E7-J7g"/>
+                            <constraint firstItem="A5H-El-1Nr" firstAttribute="leading" secondItem="fkY-2h-B6z" secondAttribute="leading" id="ire-bl-qy9"/>
+                            <constraint firstItem="A5H-El-1Nr" firstAttribute="top" secondItem="hWk-7J-b95" secondAttribute="bottom" constant="427" id="pTy-bc-A2L"/>
+                            <constraint firstItem="aJA-z4-cqd" firstAttribute="top" secondItem="fkY-2h-B6z" secondAttribute="bottom" id="sJI-5k-3FW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8ob-7n-pAq"/>
@@ -383,7 +383,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="SFW-32-Uf9" customClass="ImageCollectionViewCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="SFW-32-Uf9" customClass="AllImageCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -703,10 +703,10 @@
             </objects>
             <point key="canvasLocation" x="1919" y="1616"/>
         </scene>
-        <!--Table View Controller-->
+        <!--All Comments List View Controller-->
         <scene sceneID="kVB-jc-mkc">
             <objects>
-                <viewController id="EfR-YK-16m" customClass="TableViewController" sceneMemberID="viewController">
+                <viewController id="EfR-YK-16m" customClass="AllCommentsListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h6N-qh-msx"/>
                         <viewControllerLayoutGuide type="bottom" id="1rv-cl-t6J"/>
@@ -806,10 +806,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6yK-Qu-Kce"/>
-        <segue reference="s4R-Rj-Nqw"/>
         <segue reference="Wxy-Nt-BSd"/>
-        <segue reference="ZoD-PJ-Qx4"/>
-        <segue reference="ySV-i1-44F"/>
+        <segue reference="BgL-nw-ZQ1"/>
+        <segue reference="MnW-yd-cpf"/>
+        <segue reference="6eJ-WL-hPh"/>
+        <segue reference="6yK-Qu-Kce"/>
     </inferredMetricsTieBreakers>
 </document>

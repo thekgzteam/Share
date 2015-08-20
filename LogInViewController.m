@@ -6,17 +6,17 @@
 //
 //
 
-#import "RegistrationViewController.h"
+#import "LogInViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <Parse/Parse.h>
-@interface RegistrationViewController ()<UITextFieldDelegate>
+@interface LogInViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextfield;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextfield;
 
 @end
 
-@implementation RegistrationViewController
+@implementation LogInViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

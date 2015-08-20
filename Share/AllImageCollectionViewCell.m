@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Edil Ashimov. All rights reserved.
 //
 
-#import "ImageCollectionViewCell.h"
+#import "AllImageCollectionViewCell.h"
 
-@implementation ImageCollectionViewCell
+@implementation AllImageCollectionViewCell
 @synthesize parseImage;
 @end

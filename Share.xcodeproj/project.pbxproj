@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		1971F3BD1B8289B900877FEC /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971F3BC1B8289B900877FEC /* CategoriesViewController.m */; };
 		1971F3C01B828D3200877FEC /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971F3BF1B828D3200877FEC /* MapViewController.m */; };
-		FD1CC7151B8397C7003CE77A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC7141B8397C7003CE77A /* TableViewController.m */; };
-		FD1CC71B1B83A148003CE77A /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC71A1B83A148003CE77A /* TableViewCell.m */; };
+		FD1CC7151B8397C7003CE77A /* AllCommentsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC7141B8397C7003CE77A /* AllCommentsListViewController.m */; };
+		FD1CC71B1B83A148003CE77A /* AllCommentsListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC71A1B83A148003CE77A /* AllCommentsListViewCell.m */; };
 		FD1CC71E1B83B731003CE77A /* AllImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC71D1B83B731003CE77A /* AllImagesViewController.m */; };
-		FD1CC7211B83B794003CE77A /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC7201B83B794003CE77A /* ImageCollectionViewCell.m */; };
+		FD1CC7211B83B794003CE77A /* AllImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC7201B83B794003CE77A /* AllImageCollectionViewCell.m */; };
 		FD22A65C1B824FB8001C30E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A65B1B824FB8001C30E4 /* main.m */; };
 		FD22A65F1B824FB8001C30E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A65E1B824FB8001C30E4 /* AppDelegate.m */; };
 		FD22A6621B824FB8001C30E4 /* IntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A6611B824FB8001C30E4 /* IntroductionViewController.m */; };
@@ -21,7 +21,7 @@
 		FD22A66A1B824FB9001C30E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD22A6681B824FB9001C30E4 /* LaunchScreen.xib */; };
 		FD22A6761B824FB9001C30E4 /* ShareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A6751B824FB9001C30E4 /* ShareTests.m */; };
 		FD22A6801B825EBD001C30E4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD22A67F1B825EBD001C30E4 /* MapKit.framework */; };
-		FD22A6901B827E7B001C30E4 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A68F1B827E7B001C30E4 /* RegistrationViewController.m */; };
+		FD22A6901B827E7B001C30E4 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A68F1B827E7B001C30E4 /* LogInViewController.m */; };
 		FD22A6981B828EFD001C30E4 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD22A6951B828EFD001C30E4 /* FBSDKCoreKit.framework */; };
 		FD22A6991B828EFD001C30E4 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD22A6961B828EFD001C30E4 /* FBSDKLoginKit.framework */; };
 		FD22A69A1B828EFD001C30E4 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD22A6971B828EFD001C30E4 /* FBSDKShareKit.framework */; };
@@ -67,14 +67,14 @@
 		1971F3BC1B8289B900877FEC /* CategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		1971F3BE1B828D3200877FEC /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		1971F3BF1B828D3200877FEC /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		FD1CC7131B8397C7003CE77A /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		FD1CC7141B8397C7003CE77A /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		FD1CC7191B83A148003CE77A /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		FD1CC71A1B83A148003CE77A /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		FD1CC7131B8397C7003CE77A /* AllCommentsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCommentsListViewController.h; sourceTree = "<group>"; };
+		FD1CC7141B8397C7003CE77A /* AllCommentsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCommentsListViewController.m; sourceTree = "<group>"; };
+		FD1CC7191B83A148003CE77A /* AllCommentsListViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllCommentsListViewCell.h; sourceTree = "<group>"; };
+		FD1CC71A1B83A148003CE77A /* AllCommentsListViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllCommentsListViewCell.m; sourceTree = "<group>"; };
 		FD1CC71C1B83B731003CE77A /* AllImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllImagesViewController.h; sourceTree = "<group>"; };
 		FD1CC71D1B83B731003CE77A /* AllImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllImagesViewController.m; sourceTree = "<group>"; };
-		FD1CC71F1B83B794003CE77A /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
-		FD1CC7201B83B794003CE77A /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
+		FD1CC71F1B83B794003CE77A /* AllImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllImageCollectionViewCell.h; sourceTree = "<group>"; };
+		FD1CC7201B83B794003CE77A /* AllImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllImageCollectionViewCell.m; sourceTree = "<group>"; };
 		FD22A6561B824FB8001C30E4 /* Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Share.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD22A65A1B824FB8001C30E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD22A65B1B824FB8001C30E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,8 +89,8 @@
 		FD22A6741B824FB9001C30E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD22A6751B824FB9001C30E4 /* ShareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareTests.m; sourceTree = "<group>"; };
 		FD22A67F1B825EBD001C30E4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		FD22A68E1B827E7B001C30E4 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationViewController.h; path = Share.xcodeproj/../RegistrationViewController.h; sourceTree = SOURCE_ROOT; };
-		FD22A68F1B827E7B001C30E4 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationViewController.m; path = Share.xcodeproj/../RegistrationViewController.m; sourceTree = SOURCE_ROOT; };
+		FD22A68E1B827E7B001C30E4 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = SOURCE_ROOT; };
+		FD22A68F1B827E7B001C30E4 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = SOURCE_ROOT; };
 		FD22A6951B828EFD001C30E4 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		FD22A6961B828EFD001C30E4 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		FD22A6971B828EFD001C30E4 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -197,16 +197,16 @@
 				FD22A6611B824FB8001C30E4 /* IntroductionViewController.m */,
 				FDDFB15F1B84474F0015EE4D /* ProfileViewController.h */,
 				FDDFB1601B84474F0015EE4D /* ProfileViewController.m */,
-				FD22A68E1B827E7B001C30E4 /* RegistrationViewController.h */,
-				FD22A68F1B827E7B001C30E4 /* RegistrationViewController.m */,
+				FD22A68E1B827E7B001C30E4 /* LogInViewController.h */,
+				FD22A68F1B827E7B001C30E4 /* LogInViewController.m */,
 				FD22A6C71B82C831001C30E4 /* SignUpViewController.h */,
 				FD22A6C81B82C831001C30E4 /* SignUpViewController.m */,
 				1971F3BB1B8289B900877FEC /* CategoriesViewController.h */,
 				1971F3BC1B8289B900877FEC /* CategoriesViewController.m */,
 				1971F3BE1B828D3200877FEC /* MapViewController.h */,
 				1971F3BF1B828D3200877FEC /* MapViewController.m */,
-				FD1CC7131B8397C7003CE77A /* TableViewController.h */,
-				FD1CC7141B8397C7003CE77A /* TableViewController.m */,
+				FD1CC7131B8397C7003CE77A /* AllCommentsListViewController.h */,
+				FD1CC7141B8397C7003CE77A /* AllCommentsListViewController.m */,
 				FD1CC71C1B83B731003CE77A /* AllImagesViewController.h */,
 				FD1CC71D1B83B731003CE77A /* AllImagesViewController.m */,
 				FDDFB1671B850D2F0015EE4D /* SearchViewController.h */,
@@ -290,12 +290,12 @@
 			children = (
 				FDDFB15C1B8447310015EE4D /* ProfileCollectionViewCell.h */,
 				FDDFB15D1B8447310015EE4D /* ProfileCollectionViewCell.m */,
-				FD1CC7201B83B794003CE77A /* ImageCollectionViewCell.m */,
-				FD1CC71F1B83B794003CE77A /* ImageCollectionViewCell.h */,
+				FD1CC7201B83B794003CE77A /* AllImageCollectionViewCell.m */,
+				FD1CC71F1B83B794003CE77A /* AllImageCollectionViewCell.h */,
 				FDDFB1621B84DCC60015EE4D /* ProfileTableViewCell.h */,
 				FDDFB1631B84DCC60015EE4D /* ProfileTableViewCell.m */,
-				FD1CC7191B83A148003CE77A /* TableViewCell.h */,
-				FD1CC71A1B83A148003CE77A /* TableViewCell.m */,
+				FD1CC7191B83A148003CE77A /* AllCommentsListViewCell.h */,
+				FD1CC71A1B83A148003CE77A /* AllCommentsListViewCell.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -401,18 +401,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD22A6621B824FB8001C30E4 /* IntroductionViewController.m in Sources */,
-				FD22A6901B827E7B001C30E4 /* RegistrationViewController.m in Sources */,
-				FD1CC71B1B83A148003CE77A /* TableViewCell.m in Sources */,
+				FD22A6901B827E7B001C30E4 /* LogInViewController.m in Sources */,
+				FD1CC71B1B83A148003CE77A /* AllCommentsListViewCell.m in Sources */,
 				FD1CC71E1B83B731003CE77A /* AllImagesViewController.m in Sources */,
 				FD22A65F1B824FB8001C30E4 /* AppDelegate.m in Sources */,
-				FD1CC7151B8397C7003CE77A /* TableViewController.m in Sources */,
+				FD1CC7151B8397C7003CE77A /* AllCommentsListViewController.m in Sources */,
 				1971F3C01B828D3200877FEC /* MapViewController.m in Sources */,
 				FDDFB1691B850D2F0015EE4D /* SearchViewController.m in Sources */,
 				1971F3BD1B8289B900877FEC /* CategoriesViewController.m in Sources */,
 				FD22A6C91B82C831001C30E4 /* SignUpViewController.m in Sources */,
 				FDDFB1641B84DCC60015EE4D /* ProfileTableViewCell.m in Sources */,
 				FDDFB1611B84474F0015EE4D /* ProfileViewController.m in Sources */,
-				FD1CC7211B83B794003CE77A /* ImageCollectionViewCell.m in Sources */,
+				FD1CC7211B83B794003CE77A /* AllImageCollectionViewCell.m in Sources */,
 				FDDFB15E1B8447310015EE4D /* ProfileCollectionViewCell.m in Sources */,
 				FD22A65C1B824FB8001C30E4 /* main.m in Sources */,
 			);

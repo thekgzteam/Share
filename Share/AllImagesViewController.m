@@ -7,7 +7,7 @@
 //
 
 #import "AllImagesViewController.h"
-#import "ImageCollectionViewCell.h"
+#import "AllImageCollectionViewCell.h"
 
 @interface AllImagesViewController ()
 
@@ -45,7 +45,7 @@
     -(UICollectionViewCell *)collectionView: (UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
        NSString *cellidentifier = @"imageCell";
-        ImageCollectionViewCell *cell = (ImageCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellidentifier forIndexPath:indexPath];
+        AllImageCollectionViewCell *cell = (AllImageCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellidentifier forIndexPath:indexPath];
         PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
         PFFile *imageFile = [imageObject objectForKey:@"image"];
 

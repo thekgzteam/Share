@@ -8,6 +8,6 @@
 
 #import "IntroductionViewController.h"
 
-@interface RegistrationViewController : IntroductionViewController
+@interface LogInViewController : IntroductionViewController
 
 @end

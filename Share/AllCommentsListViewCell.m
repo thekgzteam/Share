@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Edil Ashimov. All rights reserved.
 //
 
-#import "TableViewCell.h"
+#import "AllCommentsListViewCell.h"
 
-@implementation TableViewCell
+@implementation AllCommentsListViewCell
 
 - (void)awakeFromNib {
     // Initialization code

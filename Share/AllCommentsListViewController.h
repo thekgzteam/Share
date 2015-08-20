@@ -7,10 +7,10 @@
 //
 
 #import "IntroductionViewController.h"
-#import "TableViewCell.h"
+#import "AllCommentsListViewCell.h"
 #import <Parse/Parse.h>
 
-@interface TableViewController : IntroductionViewController <UITableViewDataSource, UITableViewDelegate>
+@interface AllCommentsListViewController : IntroductionViewController <UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *commentDescription;
 }
