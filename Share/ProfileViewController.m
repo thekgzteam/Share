@@ -12,6 +12,7 @@
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UIImageView *cellImageView;
 
 @end
 
@@ -80,9 +81,6 @@
     [self retrieveFavoriteImages];
 }
 
-- (IBAction)buttonpressed:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 //-pragma mark for table view
 -(void) retrieveCommentsFromParse {
@@ -108,7 +106,7 @@
     PFObject *tempObject = [commentDescription objectAtIndex:indexPath.row];
 
      cell.textLabel.text = [tempObject objectForKey:@"text"];
-
+//    cell.imageView.image = [tempObject objectForKey:@"image"];
     return cell;
 
 }

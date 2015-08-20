@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Edil Ashimov. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "IntroductionViewController.h"
 
 
-@interface SignUpViewController : ViewController
+@interface SignUpViewController : IntroductionViewController
 
 
 @end

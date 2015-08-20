@@ -6,8 +6,8 @@
 //
 //
 
-#import "ViewController.h"
+#import "IntroductionViewController.h"
 
-@interface RegistrationViewController : ViewController
+@interface RegistrationViewController : IntroductionViewController
 
 @end

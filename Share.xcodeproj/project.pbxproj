@@ -11,11 +11,11 @@
 		1971F3C01B828D3200877FEC /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971F3BF1B828D3200877FEC /* MapViewController.m */; };
 		FD1CC7151B8397C7003CE77A /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC7141B8397C7003CE77A /* TableViewController.m */; };
 		FD1CC71B1B83A148003CE77A /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC71A1B83A148003CE77A /* TableViewCell.m */; };
-		FD1CC71E1B83B731003CE77A /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC71D1B83B731003CE77A /* ImageViewController.m */; };
+		FD1CC71E1B83B731003CE77A /* AllImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC71D1B83B731003CE77A /* AllImagesViewController.m */; };
 		FD1CC7211B83B794003CE77A /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD1CC7201B83B794003CE77A /* ImageCollectionViewCell.m */; };
 		FD22A65C1B824FB8001C30E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A65B1B824FB8001C30E4 /* main.m */; };
 		FD22A65F1B824FB8001C30E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A65E1B824FB8001C30E4 /* AppDelegate.m */; };
-		FD22A6621B824FB8001C30E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A6611B824FB8001C30E4 /* ViewController.m */; };
+		FD22A6621B824FB8001C30E4 /* IntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A6611B824FB8001C30E4 /* IntroductionViewController.m */; };
 		FD22A6651B824FB9001C30E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD22A6631B824FB8001C30E4 /* Main.storyboard */; };
 		FD22A6671B824FB9001C30E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD22A6661B824FB9001C30E4 /* Images.xcassets */; };
 		FD22A66A1B824FB9001C30E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD22A6681B824FB9001C30E4 /* LaunchScreen.xib */; };
@@ -71,8 +71,8 @@
 		FD1CC7141B8397C7003CE77A /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		FD1CC7191B83A148003CE77A /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		FD1CC71A1B83A148003CE77A /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		FD1CC71C1B83B731003CE77A /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
-		FD1CC71D1B83B731003CE77A /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		FD1CC71C1B83B731003CE77A /* AllImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllImagesViewController.h; sourceTree = "<group>"; };
+		FD1CC71D1B83B731003CE77A /* AllImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllImagesViewController.m; sourceTree = "<group>"; };
 		FD1CC71F1B83B794003CE77A /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
 		FD1CC7201B83B794003CE77A /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
 		FD22A6561B824FB8001C30E4 /* Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Share.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,8 +80,8 @@
 		FD22A65B1B824FB8001C30E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FD22A65D1B824FB8001C30E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FD22A65E1B824FB8001C30E4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FD22A6601B824FB8001C30E4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FD22A6611B824FB8001C30E4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FD22A6601B824FB8001C30E4 /* IntroductionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroductionViewController.h; sourceTree = "<group>"; };
+		FD22A6611B824FB8001C30E4 /* IntroductionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroductionViewController.m; sourceTree = "<group>"; };
 		FD22A6641B824FB8001C30E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD22A6661B824FB9001C30E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FD22A6691B824FB9001C30E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -193,12 +193,10 @@
 				FD22A6631B824FB8001C30E4 /* Main.storyboard */,
 				FD22A65D1B824FB8001C30E4 /* AppDelegate.h */,
 				FD22A65E1B824FB8001C30E4 /* AppDelegate.m */,
-				FD22A6601B824FB8001C30E4 /* ViewController.h */,
-				FD22A6611B824FB8001C30E4 /* ViewController.m */,
+				FD22A6601B824FB8001C30E4 /* IntroductionViewController.h */,
+				FD22A6611B824FB8001C30E4 /* IntroductionViewController.m */,
 				FDDFB15F1B84474F0015EE4D /* ProfileViewController.h */,
 				FDDFB1601B84474F0015EE4D /* ProfileViewController.m */,
-				FDDFB1621B84DCC60015EE4D /* ProfileTableViewCell.h */,
-				FDDFB1631B84DCC60015EE4D /* ProfileTableViewCell.m */,
 				FD22A68E1B827E7B001C30E4 /* RegistrationViewController.h */,
 				FD22A68F1B827E7B001C30E4 /* RegistrationViewController.m */,
 				FD22A6C71B82C831001C30E4 /* SignUpViewController.h */,
@@ -209,8 +207,8 @@
 				1971F3BF1B828D3200877FEC /* MapViewController.m */,
 				FD1CC7131B8397C7003CE77A /* TableViewController.h */,
 				FD1CC7141B8397C7003CE77A /* TableViewController.m */,
-				FD1CC71C1B83B731003CE77A /* ImageViewController.h */,
-				FD1CC71D1B83B731003CE77A /* ImageViewController.m */,
+				FD1CC71C1B83B731003CE77A /* AllImagesViewController.h */,
+				FD1CC71D1B83B731003CE77A /* AllImagesViewController.m */,
 				FDDFB1671B850D2F0015EE4D /* SearchViewController.h */,
 				FDDFB1681B850D2F0015EE4D /* SearchViewController.m */,
 				FD22A6661B824FB9001C30E4 /* Images.xcassets */,
@@ -294,6 +292,8 @@
 				FDDFB15D1B8447310015EE4D /* ProfileCollectionViewCell.m */,
 				FD1CC7201B83B794003CE77A /* ImageCollectionViewCell.m */,
 				FD1CC71F1B83B794003CE77A /* ImageCollectionViewCell.h */,
+				FDDFB1621B84DCC60015EE4D /* ProfileTableViewCell.h */,
+				FDDFB1631B84DCC60015EE4D /* ProfileTableViewCell.m */,
 				FD1CC7191B83A148003CE77A /* TableViewCell.h */,
 				FD1CC71A1B83A148003CE77A /* TableViewCell.m */,
 			);
@@ -400,10 +400,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD22A6621B824FB8001C30E4 /* ViewController.m in Sources */,
+				FD22A6621B824FB8001C30E4 /* IntroductionViewController.m in Sources */,
 				FD22A6901B827E7B001C30E4 /* RegistrationViewController.m in Sources */,
 				FD1CC71B1B83A148003CE77A /* TableViewCell.m in Sources */,
-				FD1CC71E1B83B731003CE77A /* ImageViewController.m in Sources */,
+				FD1CC71E1B83B731003CE77A /* AllImagesViewController.m in Sources */,
 				FD22A65F1B824FB8001C30E4 /* AppDelegate.m in Sources */,
 				FD1CC7151B8397C7003CE77A /* TableViewController.m in Sources */,
 				1971F3C01B828D3200877FEC /* MapViewController.m in Sources */,

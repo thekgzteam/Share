@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Edil Ashimov. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "IntroductionViewController.h"
 #import "TableViewCell.h"
 #import <Parse/Parse.h>
 
-@interface TableViewController : ViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TableViewController : IntroductionViewController <UITableViewDataSource, UITableViewDelegate>
 {
     NSArray *commentDescription;
 }
