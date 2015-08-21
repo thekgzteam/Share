@@ -21,7 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.usernameTextfield resignFirstResponder];
-    [self.passwordTextfield resignFirstResponder]; 
+    [self.passwordTextfield resignFirstResponder];
+    self.usernameTextfield.placeholder = @"Username";
+    self.passwordTextfield.placeholder = @"Password";
 
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     loginButton.center = CGPointMake(160.0, 380.0);

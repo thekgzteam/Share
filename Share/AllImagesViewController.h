@@ -10,12 +10,11 @@
 #import <Parse/Parse.h>
 @interface AllImagesViewController : UIViewController {
 
-    NSMutableArray *imagesArray;
     NSArray *imageFilesArray;
 
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *imageCollection;
+@property (nonatomic, strong) IBOutlet UICollectionViewFlowLayout *flowLayout;
 
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingSpinner;
 
 @end

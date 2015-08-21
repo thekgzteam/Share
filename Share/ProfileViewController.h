@@ -15,6 +15,7 @@
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionOfImages;
 @property (weak, nonatomic) IBOutlet UITableView *collectionOfComments;
+@property (weak, nonatomic) IBOutlet UICollectionView *ProfileVisualImage;
 
 @end
 

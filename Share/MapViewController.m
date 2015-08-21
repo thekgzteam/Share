@@ -17,18 +17,12 @@
 @end
 
 @implementation MapViewController
-- (IBAction)buttonList:(UIBarButtonItem *)sender {
-}
-- (IBAction)buttonMap:(UIBarButtonItem *)sender {
-}
-- (IBAction)buttonSearch:(UIBarButtonItem *)sender {
-}
-
 
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self handleLongPress:<#(UIGestureRecognizer *)#>
     double latitude = 41.90;
     double longitude = 87.65;
 
@@ -41,15 +35,17 @@
     [self.mapView addAnnotation: self.chicagoIlannotation];
     self.mapView.showsUserLocation = true;
 
-    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+    UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
-    lpgr.minimumPressDuration = 2.0; //length of user press
-    [self.mapView addGestureRecognizer:lpgr];
+    longPressGestureRecognizer.minimumPressDuration = 2.0; //length of user press
+    [self.mapView addGestureRecognizer:longPressGestureRecognizer];
+
 
 
 }
 
 - (void)handleLongPress:(UIGestureRecognizer *)gestureRecognizer {
+
     if (gestureRecognizer.state != UIGestureRecognizerStateBegan)
         return;
 

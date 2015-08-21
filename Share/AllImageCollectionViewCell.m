@@ -10,4 +10,7 @@
 
 @implementation AllImageCollectionViewCell
 @synthesize parseImage;
+
+
 @end
+

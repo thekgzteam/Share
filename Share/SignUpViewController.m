@@ -22,6 +22,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.usernameTextfield.placeholder = @"Username";
+    self.passwordTextfield.placeholder = @"Password";
+    self.emailTextfield.placeholder = @"Email";
+    self.reenterPasswordTextfield.placeholder = @"Password";
+
+}
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([self.usernameTextfield isFirstResponder] && [touch view] != self.usernameTextfield)
+        [self.usernameTextfield resignFirstResponder];
+
+    ([self.passwordTextfield isFirstResponder] && [touch view] != self.passwordTextfield); {
+        [self.passwordTextfield resignFirstResponder];
+
+        ([self.reenterPasswordTextfield isFirstResponder] && [touch view] != self.reenterPasswordTextfield); {
+        [self.reenterPasswordTextfield resignFirstResponder];
+
+            ([self.emailTextfield isFirstResponder] && [touch view] != self.emailTextfield);{
+            [self.emailTextfield resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
+        }
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {

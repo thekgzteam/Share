@@ -15,12 +15,13 @@
 
 @implementation AllImagesViewController
 
-//@synthesize imageCollection, loadingSpinner;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self queryParseMethod];
 
+
 }
+
 -(void)queryParseMethod {
     NSLog (@"start query");
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
@@ -46,6 +47,7 @@
 
        NSString *cellidentifier = @"imageCell";
         AllImageCollectionViewCell *cell = (AllImageCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellidentifier forIndexPath:indexPath];
+
         PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
         PFFile *imageFile = [imageObject objectForKey:@"image"];
 
@@ -88,8 +90,8 @@
 -(void) likedFail {
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Error liking the image" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
-}
 
+}
 
 - (IBAction)gobackbutton:(id)sender {
 

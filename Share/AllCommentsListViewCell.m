@@ -11,6 +11,8 @@
 @implementation AllCommentsListViewCell
 
 - (void)awakeFromNib {
+    self.imageView.frame = CGRectMake(0,0,32,32);
+   
     // Initialization code
 }
 
@@ -19,5 +21,6 @@
 
     // Configure the view for the selected state
 }
+
 
 @end

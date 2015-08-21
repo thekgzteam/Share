@@ -11,15 +11,20 @@
 
 
 @interface IntroductionViewController ()
-@property NSString *string;
+
 @end
 
 @implementation IntroductionViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    NSArray *imageArray;
+    self.intro.image = [UIImage imageNamed:@"Intro"];
+    NSLog(@"%@", self.intro.image);
 
- 
+    imageArray = [[NSArray alloc] initWithObjects:
+                  [UIImage imageNamed:@""], nil];
+
+
 }
 
 @end

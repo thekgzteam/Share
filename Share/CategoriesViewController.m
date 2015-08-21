@@ -18,6 +18,8 @@ CategoriesViewController
 
 }
 
+
+
 - (IBAction)buttonEntertainment:(UIButton *)sender {
 }
 - (IBAction)buttonNews:(UIButton *)sender {
@@ -28,6 +30,11 @@ CategoriesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    CGRect labelFrame = CGRectMake( 10, 40, 100, 30 );
+    UILabel* label = [[UILabel alloc] initWithFrame: labelFrame];
+    [label setText: @"My Label"];
+    [label setTextColor: [UIColor orangeColor]];
 
 }
 

@@ -11,9 +11,8 @@
 #import <Parse/Parse.h>
 
 @interface AllCommentsListViewController : IntroductionViewController <UITableViewDataSource, UITableViewDelegate>
-{
-    NSArray *commentDescription;
-}
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property NSMutableArray *posts;
+
 
 @end
