@@ -48,6 +48,7 @@
 		FD22A6C91B82C831001C30E4 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD22A6C81B82C831001C30E4 /* SignUpViewController.m */; };
 		FD2D62061B868AD0008DB7F6 /* ImageCellFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D62051B868AD0008DB7F6 /* ImageCellFormat.m */; };
 		FD2D62091B869C77008DB7F6 /* VisualEffectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D62081B869C77008DB7F6 /* VisualEffectCollectionViewCell.m */; };
+		FD5788E61B8BEE5700CDD962 /* ShareItViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5788E51B8BEE5700CDD962 /* ShareItViewController.m */; };
 		FDDFB15E1B8447310015EE4D /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFB15D1B8447310015EE4D /* ProfileCollectionViewCell.m */; };
 		FDDFB1611B84474F0015EE4D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFB1601B84474F0015EE4D /* ProfileViewController.m */; };
 		FDDFB1641B84DCC60015EE4D /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFB1631B84DCC60015EE4D /* ProfileTableViewCell.m */; };
@@ -122,6 +123,8 @@
 		FD2D62051B868AD0008DB7F6 /* ImageCellFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCellFormat.m; sourceTree = "<group>"; };
 		FD2D62071B869C77008DB7F6 /* VisualEffectCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualEffectCollectionViewCell.h; sourceTree = "<group>"; };
 		FD2D62081B869C77008DB7F6 /* VisualEffectCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisualEffectCollectionViewCell.m; sourceTree = "<group>"; };
+		FD5788E41B8BEE5700CDD962 /* ShareItViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareItViewController.h; sourceTree = "<group>"; };
+		FD5788E51B8BEE5700CDD962 /* ShareItViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareItViewController.m; sourceTree = "<group>"; };
 		FDDFB15C1B8447310015EE4D /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
 		FDDFB15D1B8447310015EE4D /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		FDDFB15F1B84474F0015EE4D /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -306,6 +309,8 @@
 				FDDFB1631B84DCC60015EE4D /* ProfileTableViewCell.m */,
 				FD1CC7191B83A148003CE77A /* AllCommentsListViewCell.h */,
 				FD1CC71A1B83A148003CE77A /* AllCommentsListViewCell.m */,
+				FD5788E41B8BEE5700CDD962 /* ShareItViewController.h */,
+				FD5788E51B8BEE5700CDD962 /* ShareItViewController.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				TargetAttributes = {
 					FD22A6551B824FB7001C30E4 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = LX84G6PTJX;
 					};
 					FD22A66E1B824FB9001C30E4 = {
 						CreatedOnToolsVersion = 6.4;
@@ -419,6 +425,7 @@
 				1971F3C01B828D3200877FEC /* MapViewController.m in Sources */,
 				FDDFB1691B850D2F0015EE4D /* SearchViewController.m in Sources */,
 				FD2D62061B868AD0008DB7F6 /* ImageCellFormat.m in Sources */,
+				FD5788E61B8BEE5700CDD962 /* ShareItViewController.m in Sources */,
 				1971F3BD1B8289B900877FEC /* CategoriesViewController.m in Sources */,
 				FD22A6C91B82C831001C30E4 /* SignUpViewController.m in Sources */,
 				FDDFB1641B84DCC60015EE4D /* ProfileTableViewCell.m in Sources */,
@@ -552,6 +559,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -561,6 +569,7 @@
 					"$(PROJECT_DIR)/Share",
 				);
 				INFOPLIST_FILE = Share/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -570,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -579,6 +589,7 @@
 					"$(PROJECT_DIR)/Share",
 				);
 				INFOPLIST_FILE = Share/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

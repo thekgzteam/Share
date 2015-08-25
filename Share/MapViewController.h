@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController <UIGestureRecognizerDelegate>
+@interface MapViewController : UIViewController <UIGestureRecognizerDelegate, MKMapViewDelegate>
 
 @end

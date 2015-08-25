@@ -10,6 +10,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <Parse/Parse.h>
+#import "CategoriesViewController.h"
 @interface LogInViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextfield;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextfield;
@@ -26,27 +27,32 @@
     self.passwordTextfield.placeholder = @"Password";
 
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.center = CGPointMake(160.0, 380.0);
+    loginButton.center = CGPointMake(190, 390.0);
     [self.view addSubview:loginButton];
-//    [self performSegueWithIdentifier:@"signin" sender:self];
+
+//    CategoriesViewController*vc1 = [[CategoriesViewController alloc] initWithNibName:@"Catergories View Controller" bundle:nil];
+//    [vc1 setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+//    [self presentViewController:vc1 animated:YES completion:nil];
 
     PFUser *user = [PFUser user];
     user.username = self.usernameTextfield.text;
     user.password = self.passwordTextfield.text;
     user.email = @"email@example.com";
 
-    // other fields can be set if you want to save more information
-    user[@"phone"] = @"650-555-0000";
 
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            // Hooray! Let them use the app now.
-        } else {
-            NSString *errorString = [error userInfo][@"error"];
-            // Show the errorString somewhere and let the user try again.
-        }
-    }];
+
+
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    PFUser *user = [PFUser currentUser];
+    if (user.username !=nil) {
+        [self performSegueWithIdentifier:@"signin" sender:self];
+    }
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 
         UITouch *touch = [[event allTouches] anyObject];
@@ -60,19 +66,10 @@
 
 
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-
-//    PFUser *user = [PFUser currentUser];
-//    if (user.username !=nil) {
-//    [self performSegueWithIdentifier:@"signin" sender:self];
-//    }
-}
-
 - (IBAction)loginButton:(id)sender {
     [PFUser logInWithUsernameInBackground:self.usernameTextfield.text password:self.passwordTextfield.text block:^(PFUser *user, NSError *error){
         if (error) {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Warning!" message:@"Sorry we had a problem logging you in" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Failed To Login!" message:@"Sorry we had a problem logging you in" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
         }
         else {
@@ -81,31 +78,7 @@
         }
     }];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
 @end

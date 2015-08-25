@@ -8,35 +8,33 @@
 
 #import "CategoriesViewController.h"
 @interface CategoriesViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *restaurantButton;
+@property (weak, nonatomic) IBOutlet UIButton *shoppingButton;
+@property (weak, nonatomic) IBOutlet UIButton *newsButton;
+@property (weak, nonatomic) IBOutlet UIButton *entertainmentButton;
 
 @end
 
 @implementation
 
 CategoriesViewController
-- (IBAction)buttonRestaurants:(UIButton *)sender {
-
-}
-
-
-
-- (IBAction)buttonEntertainment:(UIButton *)sender {
-}
-- (IBAction)buttonNews:(UIButton *)sender {
-
-}
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    CGRect labelFrame = CGRectMake( 10, 40, 100, 30 );
-    UILabel* label = [[UILabel alloc] initWithFrame: labelFrame];
-    [label setText: @"My Label"];
-    [label setTextColor: [UIColor orangeColor]];
+    self.restaurantButton.layer.masksToBounds = YES;
+    self.restaurantButton.layer.cornerRadius = 8.0;
 
+    self.entertainmentButton.layer.cornerRadius = 8.0;
+
+    self.shoppingButton.layer.cornerRadius = 8.0;
+
+    self.newsButton.layer.cornerRadius = 8.0;
 }
+
+
+
+
 
 - (IBAction)logOutButton:(id)sender {
     [PFUser logOut];
