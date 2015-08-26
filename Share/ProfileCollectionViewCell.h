@@ -10,6 +10,7 @@
 
 @interface ProfileCollectionViewCell :UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *parseImageText;
 @property (weak, nonatomic) IBOutlet UIImageView *parseImageHolder;
 
 @end

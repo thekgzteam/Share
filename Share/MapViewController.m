@@ -19,7 +19,9 @@
 @property NSString *Title;
 @property NSString *AddPost;
 @property UIPopoverController *popOver;
-@property (weak, nonatomic) IBOutlet UIButton *popButton;
+@property (weak, nonatomic) IBOutlet UIToolbar *addPostItem;
+
+
 @end
 
 @implementation MapViewController
@@ -34,9 +36,9 @@
     
 
 
-
-    double latitude = 41.90;
-    double longitude = -87.65;
+//
+//    double latitude = 41.90;
+//    double longitude = -87.65;
 
 //    CLLocationCoordinate2D location;
 
@@ -46,7 +48,7 @@
     self.mapView.showsUserLocation = true;
 
     self.chicagoIlannotation = [MKPointAnnotation new];
-    self.chicagoIlannotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+//    self.chicagoIlannotation.coordinate = CLLocationCoordinate2DMake(latitude, longitude);
     [self.mapView addAnnotation: self.chicagoIlannotation];
 
 }

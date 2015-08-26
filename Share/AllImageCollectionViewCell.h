@@ -11,5 +11,6 @@
 @interface AllImageCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *parseImage;
 
+@property (weak, nonatomic) IBOutlet UILabel *parseImageText;
 
 @end

@@ -54,6 +54,7 @@
         [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             cell.parseImage.image = [UIImage imageWithData:data];
+            cell.parseImageText.text = [imageObject objectForKey:@"text"];
             NSLog (@"getting image");
         }
     }];

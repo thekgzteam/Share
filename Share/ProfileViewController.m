@@ -25,7 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIView *dockView;
 
 
-@property (weak, nonatomic) IBOutlet UIButton *sendMessageButton;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UITextField *messageTextfield;
 
@@ -43,6 +42,7 @@
     //    [self queryParseMethod];
     [self retrieveMessageFromParse];
     [self retrieveFavoriteImages];
+
 
 
 
@@ -127,6 +127,7 @@
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             cell.parseImageHolder.image = [UIImage imageWithData:data];
+            cell.parseImageText.text = [imageObject objectForKey:@"text"];
 
         }
     }];

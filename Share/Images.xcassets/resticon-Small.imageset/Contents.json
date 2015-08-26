@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "change-60.png"
+      "filename" : "resticon-Small.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "change-60@2x.png"
+      "filename" : "resticon-Small@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "change-60@3x.png"
+      "filename" : "resticon-Small@3x.png"
     }
   ],
   "info" : {

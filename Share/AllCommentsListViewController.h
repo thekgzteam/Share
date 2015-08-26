@@ -10,7 +10,7 @@
 #import "AllCommentsListViewCell.h"
 #import <Parse/Parse.h>
 
-@interface AllCommentsListViewController : IntroductionViewController <UITableViewDataSource, UITableViewDelegate>
+@interface AllCommentsListViewController : IntroductionViewController
 
 @property NSMutableArray *posts;
 
