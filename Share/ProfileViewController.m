@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dockHeight;
 @property (weak, nonatomic) IBOutlet UIVisualEffectView *visaulEffect;
 @property (weak, nonatomic) IBOutlet UIView *dockView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeight;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
@@ -71,6 +72,7 @@
 
 }
 
+
 -(void)visualEffectTapped:(UITapGestureRecognizer *)recognizer {
 
     [self.messageTextfield endEditing:YES];
@@ -80,6 +82,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     [UIView animateWithDuration:0.5 animations:^{
         self.dockHeight.constant = 280;
+        self.tableViewHeight.constant = 500;
     }
                      completion:^(BOOL finished) {
                          NSLog(@"done");
@@ -94,6 +97,7 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     [UIView animateWithDuration:0.5 animations:^{
         self.dockHeight.constant = 54;
+        self.tableViewHeight.constant = 187;
     }
                      completion:^(BOOL finished) {
                          NSLog(@"done");
@@ -170,16 +174,18 @@
 
     PFObject *textMessage = [PFObject objectWithClassName:@"Message"];
     textMessage[@"messageText"] = self.messageTextfield.text;
+    textMessage[@"username"] = [PFUser currentUser].username;
+
 
     [textMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"The Message Has Been Saved");
             self.messageTextfield.text = 0;
-            [self.messageTableView reloadData];
+            [self retrieveMessageFromParse];
+
         } else {
             NSLog(@"Error Saving the Message");        }
     }];
-
 
 }
 
@@ -209,24 +215,27 @@
     return self.messageArray.count;
 }
 
--(UITableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(ProfileTableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"Loading tableview.");
-    UITableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"messageid"];
+    ProfileTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"messageid"];
 
     PFObject *post = [self.messageArray objectAtIndex:indexPath.row];
 //    PFFile *imageFile = [post objectForKey:@"image"];
-
     NSString *text = [post objectForKey:@"messageText"];
-
-    NSLog(@"Loadng post: %@", text);
+    NSString *username = [post objectForKey:@"username"];
+//    NSInteger *time = [post objectForKey:@"createdAt"];
+//    NSInteger myInt = [time integerValue];
 
     if ([text isEqual:@""]) {
         text = @"No message.";
 
 
     }
-    
-    cell.textLabel.text = text;
+
+    cell.messageTextView.text = text;
+    cell.usernameLabel.text = username;
+//    cell.timeLabel.text = [NSString stringWithFormat:@"%ld", (long)myInt];
+
     cell.imageView.layer.masksToBounds = YES;
     cell.imageView.layer.cornerRadius = 8.0;
     cell.imageView.frame = CGRectMake(0, 50, 50, 50);

@@ -16,6 +16,6 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionOfImages;
 @property (weak, nonatomic) IBOutlet UICollectionView *ProfileVisualImage;
 @property NSMutableArray *messageArray;
-
+@property NSArray *usernameArray;
 @end
 

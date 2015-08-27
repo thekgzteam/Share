@@ -11,4 +11,9 @@
 @interface ProfileTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *parseLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+@property (weak, nonatomic) IBOutlet UITextView *messageTextView;
+
 @end
