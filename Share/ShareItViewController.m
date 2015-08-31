@@ -18,9 +18,9 @@
 @property UIImagePickerController *picker2;
 @property IBOutlet UIImageView *imageView;
 @property UIImage *image;
-@property (weak, nonatomic) IBOutlet UIButton *libraryButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *PostButton;
-@property (weak, nonatomic) IBOutlet UIDatePicker *smallPicker;
+
 
 
 @end
@@ -33,6 +33,8 @@
     self.nameTextfield.placeholder = @"Name";
     self.descriptionTextfield.placeholder = @"Description";
 
+
+
 }
 - (IBAction)TakePhoto {
     self.picker =[[UIImagePickerController alloc] init];
@@ -40,10 +42,6 @@
     [self.picker setSourceType:UIImagePickerControllerSourceTypeCamera];
     [self presentViewController:self.
      picker animated:YES completion:NULL];
-
-
-
-    _smallPicker.frame = CGRectMake(0, 0, 320, 60);
 
 }
 
@@ -69,6 +67,8 @@
     PFObject *textMessage = [PFObject objectWithClassName:@"Post"];
     textMessage[@"text"] = self.nameTextfield.text;
     textMessage[@"description"] = self.descriptionTextfield.text;
+    textMessage[@"latitude"] =  [NSNumber numberWithFloat:self.postAnnotation.coordinate.latitude];
+    textMessage[@"longitude"] =  [NSNumber numberWithFloat:self.postAnnotation.coordinate.longitude];
 //    textMessage[@"image"] = self.imageView.image;
 
 

@@ -7,16 +7,17 @@
 //
 
 #import "CategoriesViewController.h"
+#import "MapViewController.h"
 @interface CategoriesViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *restaurantButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *shoppingButton;
 @property (weak, nonatomic) IBOutlet UIButton *newsButton;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *entertainmentButton;
 @property (weak, nonatomic) IBOutlet UIButton *sportsButton;
-@property (weak, nonatomic) IBOutlet UIButton *vacantButton;
+@property (weak, nonatomic) IBOutlet UIButton *otherButton;
 @property (weak, nonatomic) IBOutlet UIButton *topPatriesButton;
-@property (weak, nonatomic) IBOutlet UIButton *vacantButton2;
+@property (weak, nonatomic) IBOutlet UIButton *businessMeetingButton;
 
 
 @end
@@ -27,33 +28,64 @@ CategoriesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.scrollView setScrollEnabled:YES];
-    [self.scrollView setContentSize:CGSizeMake(406, 800)];
     self.restaurantButton.layer.masksToBounds = YES;
-    self.restaurantButton.layer.cornerRadius = 8.0;
+    self.restaurantButton.layer.cornerRadius = 4.0;
 
-    self.entertainmentButton.layer.cornerRadius = 8.0;
+    self.entertainmentButton.layer.cornerRadius = 4.0;
 
-    self.shoppingButton.layer.cornerRadius = 8.0;
+    self.shoppingButton.layer.cornerRadius = 4.0;
 
-    self.newsButton.layer.cornerRadius = 8.0;
-    self.sportsButton.layer.cornerRadius = 8.0;
-    self.vacantButton.layer.cornerRadius = 8.0;
-    self.vacantButton2.layer.cornerRadius = 8.0;
-    self.topPatriesButton.layer.cornerRadius = 8.0;
+    self.newsButton.layer.cornerRadius = 4.0;
+    self.sportsButton.layer.cornerRadius = 4.0;
+    self.otherButton.layer.cornerRadius = 4.0;
+    self.businessMeetingButton.layer.cornerRadius = 4.0;
+    self.topPatriesButton.layer.cornerRadius = 4.0;
 }
-
-
 
 
 
 - (IBAction)logOutButton:(id)sender {
     [PFUser logOut];
 
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier  isEqual: @"categoriesSegue"]) {
+        MapViewController *mapViewContoller =  segue.destinationViewController;
+        mapViewContoller.modalPresentationStyle = UIModalPresentationPopover;
+        
 
+    }
+}
+- (IBAction)restaurantButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
 
+}
+- (IBAction)entertainmentButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
+
+}
+- (IBAction)shoopingButtonPressed:(id)sender {
+
+    [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
+
+}
+- (IBAction)localNewsPressed:(id)sender {
+     [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
+}
+
+- (IBAction)sportsNews:(id)sender {
+     [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
+}
+
+- (IBAction)topParty:(id)sender {
+     [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
+}
+- (IBAction)businessMeeting:(id)sender {
+    [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
+}
+- (IBAction)otherButton:(id)sender {
+     [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
+}
 
 @end

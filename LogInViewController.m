@@ -14,6 +14,8 @@
 @interface LogInViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextfield;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextfield;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIImageView *logoNav;
 
 @end
 
@@ -25,10 +27,15 @@
     [self.passwordTextfield resignFirstResponder];
     self.usernameTextfield.placeholder = @"Username";
     self.passwordTextfield.placeholder = @"Password";
+    self.loginButton.layer.cornerRadius = 2.0;
 
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.center = CGPointMake(190, 390.0);
-    [self.view addSubview:loginButton];
+
+
+//
+
+//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+//    loginButton.center = CGPointMake(190, 390.0);
+//    [self.view addSubview:loginButton];
 
 //    CategoriesViewController*vc1 = [[CategoriesViewController alloc] initWithNibName:@"Catergories View Controller" bundle:nil];
 //    [vc1 setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];

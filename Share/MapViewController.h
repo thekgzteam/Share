@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController <UIGestureRecognizerDelegate, MKMapViewDelegate>
 
+@interface MapViewController : UIViewController <UIGestureRecognizerDelegate, MKMapViewDelegate>
+@property NSMutableArray *coordinatesArray;
+@property MKPointAnnotation *postAnnotation;
 @end

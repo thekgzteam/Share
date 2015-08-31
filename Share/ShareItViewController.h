@@ -12,4 +12,6 @@
 
 - (IBAction)ChooseExisting;
 
+@property MKPointAnnotation *postAnnotation;
+
 @end

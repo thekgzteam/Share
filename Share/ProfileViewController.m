@@ -17,24 +17,16 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UIImageView *VisualParseImage;
-
-
 @property (weak, nonatomic) IBOutlet UITableView *messageTableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dockHeight;
 @property (weak, nonatomic) IBOutlet UIVisualEffectView *visaulEffect;
 @property (weak, nonatomic) IBOutlet UIView *dockView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeight;
-
-
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 @property (weak, nonatomic) IBOutlet UITextField *messageTextfield;
 
-
-
-
-
-
 @end
+
 
 @implementation ProfileViewController
 
@@ -56,7 +48,48 @@
 
     self.messageArray = [NSMutableArray new];
 
+    NSArray *array1 = [NSArray arrayWithObjects:@"a", @"b", @"c", nil];
+
+    NSArray *array2 = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
+
+    array1 = array2;
+
+
+    [NSTimer scheduledTimerWithTimeInterval:5.0f
+                                 target:self selector:@selector(retrieveRecentMessagesFromParse) userInfo:nil repeats:YES];
+//
 }
+//
+-(void) retrieveRecentMessagesFromParse {
+    PFQuery *retrieveDescription = [PFQuery queryWithClassName:@"Message"];
+    [retrieveDescription orderByDescending:@"createdAt"];
+//    NSDate *then = [NSDate dateWithTimeIntervalSinceNow:-1200];
+//    [retrieveDescription whereKey:@"updatedAt" greaterThanOrEqualTo:then];
+    [retrieveDescription findObjectsInBackgroundWithBlock:^(NSArray *retrievedMessages, NSError *error) {
+
+        if (!error) {
+            NSLog(@"Message objects found: %lu", (unsigned long)retrievedMessages.count);
+            self.messageArray = retrievedMessages.mutableCopy;
+            [self.messageTableView reloadData];
+
+//            for (PFObject *Message in objects) {
+//                // you are always adding to an existing array!!
+//                // reset the arra first
+//
+//
+//                NSLog(@"Successfully loaded %lu messages.", (unsigned long)self.messageArray.count);
+//
+//            }
+        } else {
+            NSLog(@"Error getting data: %@", error);
+
+        }
+        [self.messageTableView reloadData];
+    }];
+
+
+}
+
 
 // Query Method
 -(void)queryParseMethod {
@@ -132,6 +165,7 @@
         if (!error) {
             cell.parseImageHolder.image = [UIImage imageWithData:data];
             cell.parseImageText.text = [imageObject objectForKey:@"text"];
+            cell.descriptionLabel.text = [imageObject objectForKey:@"description"];
 
         }
     }];
@@ -175,13 +209,15 @@
     PFObject *textMessage = [PFObject objectWithClassName:@"Message"];
     textMessage[@"messageText"] = self.messageTextfield.text;
     textMessage[@"username"] = [PFUser currentUser].username;
-
+        self.dockHeight.constant = 54;
+    [self.messageTextfield endEditing:YES];
 
     [textMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"The Message Has Been Saved");
             self.messageTextfield.text = 0;
             [self retrieveMessageFromParse];
+            [self.messageArray removeAllObjects];
 
         } else {
             NSLog(@"Error Saving the Message");        }
@@ -193,10 +229,14 @@
 
 -(void) retrieveMessageFromParse {
     PFQuery *retrieveDescription = [PFQuery queryWithClassName:@"Message"];
+    [retrieveDescription orderByDescending:@"createdAt"];
     [retrieveDescription findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         NSLog(@"Message object found: %lu", (unsigned long)objects.count);
         if (!error) {
             for (PFObject *Message in objects) {
+                // you are always adding to an existing array!!
+                // reset the arra first
+
                 [self.messageArray addObject:Message];
                 NSLog(@"Successfully loaded %lu messages.", (unsigned long)self.messageArray.count);
 
@@ -218,12 +258,16 @@
 -(ProfileTableViewCell *)tableView: (UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"Loading tableview.");
     ProfileTableViewCell *cell =[tableView dequeueReusableCellWithIdentifier:@"messageid"];
-
+  
     PFObject *post = [self.messageArray objectAtIndex:indexPath.row];
 //    PFFile *imageFile = [post objectForKey:@"image"];
     NSString *text = [post objectForKey:@"messageText"];
     NSString *username = [post objectForKey:@"username"];
-//    NSInteger *time = [post objectForKey:@"createdAt"];
+    NSDate *time = [post objectForKey:@"createdAt"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSString *dateString = [dateFormatter stringFromDate:time];
+    NSLog(@"Post: %@", post );
+
 //    NSInteger myInt = [time integerValue];
 
     if ([text isEqual:@""]) {
@@ -234,7 +278,7 @@
 
     cell.messageTextView.text = text;
     cell.usernameLabel.text = username;
-//    cell.timeLabel.text = [NSString stringWithFormat:@"%ld", (long)myInt];
+    cell.timeLabel.text = dateString;
 
     cell.imageView.layer.masksToBounds = YES;
     cell.imageView.layer.cornerRadius = 8.0;

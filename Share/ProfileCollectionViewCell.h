@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *parseImageText;
 @property (weak, nonatomic) IBOutlet UIImageView *parseImageHolder;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
 @end

@@ -61,6 +61,8 @@
         return cell;
        
 }
+- (IBAction)onLikeButtonPressed:(id)sender {
+}
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self likeImage:[imageFilesArray objectAtIndex:indexPath.row]];

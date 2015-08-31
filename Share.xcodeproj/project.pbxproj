@@ -49,6 +49,11 @@
 		FD2D62061B868AD0008DB7F6 /* ImageCellFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D62051B868AD0008DB7F6 /* ImageCellFormat.m */; };
 		FD2D62091B869C77008DB7F6 /* VisualEffectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2D62081B869C77008DB7F6 /* VisualEffectCollectionViewCell.m */; };
 		FD5788E61B8BEE5700CDD962 /* ShareItViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5788E51B8BEE5700CDD962 /* ShareItViewController.m */; };
+		FD78C6281B94A0930037930F /* ExtraCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD78C6271B94A0930037930F /* ExtraCodeViewController.m */; };
+		FDB9B8261B90CB1500C45EEC /* DetailPostInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB9B8251B90CB1500C45EEC /* DetailPostInformationViewController.m */; };
+		FDB9B9231B932EB200C45EEC /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB9B9221B932EB200C45EEC /* LaunchScreenViewController.m */; };
+		FDB9B9281B93350D00C45EEC /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB9B9251B93350D00C45EEC /* CustomView.m */; };
+		FDB9B9291B93350D00C45EEC /* QCMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB9B9271B93350D00C45EEC /* QCMethod.m */; };
 		FDDFB15E1B8447310015EE4D /* ProfileCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFB15D1B8447310015EE4D /* ProfileCollectionViewCell.m */; };
 		FDDFB1611B84474F0015EE4D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFB1601B84474F0015EE4D /* ProfileViewController.m */; };
 		FDDFB1641B84DCC60015EE4D /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FDDFB1631B84DCC60015EE4D /* ProfileTableViewCell.m */; };
@@ -125,6 +130,16 @@
 		FD2D62081B869C77008DB7F6 /* VisualEffectCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisualEffectCollectionViewCell.m; sourceTree = "<group>"; };
 		FD5788E41B8BEE5700CDD962 /* ShareItViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareItViewController.h; sourceTree = "<group>"; };
 		FD5788E51B8BEE5700CDD962 /* ShareItViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareItViewController.m; sourceTree = "<group>"; };
+		FD78C6261B94A0930037930F /* ExtraCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtraCodeViewController.h; sourceTree = "<group>"; };
+		FD78C6271B94A0930037930F /* ExtraCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraCodeViewController.m; sourceTree = "<group>"; };
+		FDB9B8241B90CB1500C45EEC /* DetailPostInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailPostInformationViewController.h; path = ../DetailPostInformationViewController.h; sourceTree = "<group>"; };
+		FDB9B8251B90CB1500C45EEC /* DetailPostInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailPostInformationViewController.m; path = ../DetailPostInformationViewController.m; sourceTree = "<group>"; };
+		FDB9B9211B932EB200C45EEC /* LaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenViewController.h; sourceTree = "<group>"; };
+		FDB9B9221B932EB200C45EEC /* LaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenViewController.m; sourceTree = "<group>"; };
+		FDB9B9241B93350D00C45EEC /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		FDB9B9251B93350D00C45EEC /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		FDB9B9261B93350D00C45EEC /* QCMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCMethod.h; sourceTree = "<group>"; };
+		FDB9B9271B93350D00C45EEC /* QCMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCMethod.m; sourceTree = "<group>"; };
 		FDDFB15C1B8447310015EE4D /* ProfileCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCollectionViewCell.h; sourceTree = "<group>"; };
 		FDDFB15D1B8447310015EE4D /* ProfileCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCollectionViewCell.m; sourceTree = "<group>"; };
 		FDDFB15F1B84474F0015EE4D /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -200,6 +215,12 @@
 			children = (
 				FDDFB16A1B850D4E0015EE4D /* Model */,
 				FD22A6631B824FB8001C30E4 /* Main.storyboard */,
+				FDB9B9241B93350D00C45EEC /* CustomView.h */,
+				FDB9B9251B93350D00C45EEC /* CustomView.m */,
+				FDB9B9261B93350D00C45EEC /* QCMethod.h */,
+				FDB9B9271B93350D00C45EEC /* QCMethod.m */,
+				FDB9B9211B932EB200C45EEC /* LaunchScreenViewController.h */,
+				FDB9B9221B932EB200C45EEC /* LaunchScreenViewController.m */,
 				FD2D62071B869C77008DB7F6 /* VisualEffectCollectionViewCell.h */,
 				FD2D62081B869C77008DB7F6 /* VisualEffectCollectionViewCell.m */,
 				FD22A65D1B824FB8001C30E4 /* AppDelegate.h */,
@@ -216,6 +237,8 @@
 				1971F3BC1B8289B900877FEC /* CategoriesViewController.m */,
 				1971F3BE1B828D3200877FEC /* MapViewController.h */,
 				1971F3BF1B828D3200877FEC /* MapViewController.m */,
+				FDB9B8241B90CB1500C45EEC /* DetailPostInformationViewController.h */,
+				FDB9B8251B90CB1500C45EEC /* DetailPostInformationViewController.m */,
 				FD1CC7131B8397C7003CE77A /* AllCommentsListViewController.h */,
 				FD1CC7141B8397C7003CE77A /* AllCommentsListViewController.m */,
 				FD2D62041B868AD0008DB7F6 /* ImageCellFormat.h */,
@@ -224,6 +247,8 @@
 				FD1CC71D1B83B731003CE77A /* AllImagesViewController.m */,
 				FDDFB1671B850D2F0015EE4D /* SearchViewController.h */,
 				FDDFB1681B850D2F0015EE4D /* SearchViewController.m */,
+				FD78C6261B94A0930037930F /* ExtraCodeViewController.h */,
+				FD78C6271B94A0930037930F /* ExtraCodeViewController.m */,
 				FD22A6661B824FB9001C30E4 /* Images.xcassets */,
 				FD22A6681B824FB9001C30E4 /* LaunchScreen.xib */,
 				FD22A6591B824FB8001C30E4 /* Supporting Files */,
@@ -417,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD22A6621B824FB8001C30E4 /* IntroductionViewController.m in Sources */,
+				FD78C6281B94A0930037930F /* ExtraCodeViewController.m in Sources */,
 				FD22A6901B827E7B001C30E4 /* LogInViewController.m in Sources */,
 				FD1CC71B1B83A148003CE77A /* AllCommentsListViewCell.m in Sources */,
 				FD1CC71E1B83B731003CE77A /* AllImagesViewController.m in Sources */,
@@ -427,9 +453,13 @@
 				FD2D62061B868AD0008DB7F6 /* ImageCellFormat.m in Sources */,
 				FD5788E61B8BEE5700CDD962 /* ShareItViewController.m in Sources */,
 				1971F3BD1B8289B900877FEC /* CategoriesViewController.m in Sources */,
+				FDB9B9231B932EB200C45EEC /* LaunchScreenViewController.m in Sources */,
 				FD22A6C91B82C831001C30E4 /* SignUpViewController.m in Sources */,
+				FDB9B9281B93350D00C45EEC /* CustomView.m in Sources */,
 				FDDFB1641B84DCC60015EE4D /* ProfileTableViewCell.m in Sources */,
+				FDB9B9291B93350D00C45EEC /* QCMethod.m in Sources */,
 				FDDFB1611B84474F0015EE4D /* ProfileViewController.m in Sources */,
+				FDB9B8261B90CB1500C45EEC /* DetailPostInformationViewController.m in Sources */,
 				FD1CC7211B83B794003CE77A /* AllImageCollectionViewCell.m in Sources */,
 				FDDFB15E1B8447310015EE4D /* ProfileCollectionViewCell.m in Sources */,
 				FD22A65C1B824FB8001C30E4 /* main.m in Sources */,

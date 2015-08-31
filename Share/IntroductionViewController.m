@@ -16,15 +16,5 @@
 
 @implementation IntroductionViewController
 
-- (void)viewDidLoad {
-    NSArray *imageArray;
-    self.intro.image = [UIImage imageNamed:@"Intro"];
-    NSLog(@"%@", self.intro.image);
-
-    imageArray = [[NSArray alloc] initWithObjects:
-                  [UIImage imageNamed:@""], nil];
-
-
-}
 
 @end

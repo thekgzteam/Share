@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-@interface ProfileViewController : UIViewController {
 
+@interface ProfileViewController : UIViewController {
     NSArray *imageFilesArray;
-  
 }
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionOfImages;
 @property (weak, nonatomic) IBOutlet UICollectionView *ProfileVisualImage;
 @property NSMutableArray *messageArray;
 @property NSArray *usernameArray;
+
 @end
 

@@ -23,11 +23,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.usernameTextfield.placeholder = @"Username";
-    self.passwordTextfield.placeholder = @"Password";
-    self.emailTextfield.placeholder = @"Email";
-    self.reenterPasswordTextfield.placeholder = @"Password";
+    self.usernameTextfield.placeholder = @"  Username";
+    self.passwordTextfield.placeholder = @"  Password";
+    self.emailTextfield.placeholder = @"  Email";
+    self.reenterPasswordTextfield.placeholder = @"  Re-enter Password";
 
+     self.registerButton.layer.cornerRadius = 8.0;
+    self.usernameTextfield.layer.cornerRadius = 8.0;
+    self.passwordTextfield.layer.cornerRadius = 8.0;
+    self.emailTextfield.layer.cornerRadius = 8.0;
+    self.reenterPasswordTextfield.layer.cornerRadius = 8.0;
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 

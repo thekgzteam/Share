@@ -12,5 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *parseImage;
 
 @property (weak, nonatomic) IBOutlet UILabel *parseImageText;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 @end
