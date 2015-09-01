@@ -10,5 +10,5 @@
 
 @interface DetailPostInformationViewController : UIViewController
 @property NSArray *detailDataArray;
-@property id selectedPost;
+@property NSString *selectedPost;
 @end

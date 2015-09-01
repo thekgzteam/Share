@@ -13,4 +13,5 @@
 @interface MapViewController : UIViewController <UIGestureRecognizerDelegate, MKMapViewDelegate>
 @property NSMutableArray *coordinatesArray;
 @property MKPointAnnotation *postAnnotation;
+@property NSString *category;
 @end

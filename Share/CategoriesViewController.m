@@ -8,6 +8,7 @@
 
 #import "CategoriesViewController.h"
 #import "MapViewController.h"
+#import <Parse/Parse.h>
 @interface CategoriesViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *restaurantButton;
 
@@ -19,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *topPatriesButton;
 @property (weak, nonatomic) IBOutlet UIButton *businessMeetingButton;
 
-
+@property NSString *selectedCategory;
 @end
 
 @implementation
@@ -53,39 +54,16 @@ CategoriesViewController
     if ([segue.identifier  isEqual: @"categoriesSegue"]) {
         MapViewController *mapViewContoller =  segue.destinationViewController;
         mapViewContoller.modalPresentationStyle = UIModalPresentationPopover;
-        
-
+        mapViewContoller.category = self.selectedCategory;
     }
 }
-- (IBAction)restaurantButtonPressed:(id)sender {
+- (IBAction)buttonPressed:(UIButton *)sender {
+    self.selectedCategory = sender.titleLabel.text;
     [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
 
-}
-- (IBAction)entertainmentButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
 
 }
-- (IBAction)shoopingButtonPressed:(id)sender {
 
-    [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
-
+- (IBAction)unwindAndbookit:(UIStoryboardSegue *) segue{
 }
-- (IBAction)localNewsPressed:(id)sender {
-     [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
-}
-
-- (IBAction)sportsNews:(id)sender {
-     [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
-}
-
-- (IBAction)topParty:(id)sender {
-     [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
-}
-- (IBAction)businessMeeting:(id)sender {
-    [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
-}
-- (IBAction)otherButton:(id)sender {
-     [self performSegueWithIdentifier:@"categoriesSegue" sender:sender];
-}
-
 @end

@@ -12,9 +12,9 @@
 #import "ShareItViewController.h"
 #import "DetailPostInformationViewController.h"
 #import "CategoriesViewController.h"
-#import "IntroductionViewController.h"
-
-
+#import "PfQueryObjects.h"
+#import "ProfileViewController.h"
+#import "SharePostAnnotation.h"
 
 @interface MapViewController () <UIPopoverPresentationControllerDelegate, MKMapViewDelegate>
 
@@ -28,6 +28,7 @@
 @property PFObject *object;
 @property BOOL hasZoomed;
 
+@property SharePostAnnotation *selectedAnnotation;
 
 @end
 
@@ -36,55 +37,50 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addGestureRecognizerToMap];
-    [self setZoom];
     self.mapView.showsUserLocation = true;
-    self.locationManager = [CLLocationManager new];
-    [self.locationManager requestWhenInUseAuthorization];
     [self retrieveCoordinatesFromParse];
     self.hasZoomed = NO;
+    
 
     NSLog(@"locating");
+    NSLog(@"category selected == %@", self.category);
 
 
 }
 -(void)retrieveCoordinatesFromParse {
-    PFQuery *retrieveDescription = [PFQuery queryWithClassName:@"Post"];
-    [retrieveDescription findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 
-        if (!error) {
-            NSLog(@"%li", (unsigned long)objects.count);
+    PFQueryObjects *query = [PFQueryObjects new];
+    [query queryForCategory:self.category withMethod:^(NSArray *array) {
 
 
-            for (PFObject *post in objects) {
+        for (PFObject *post in array) {
+
+            SharePostAnnotation *annotation = [SharePostAnnotation new];
+            annotation.postObjectId = post.objectId;
+            double longitude = [[post objectForKey:@"longitude"]doubleValue];
+            double latitude = [[post objectForKey:@"latitude"]doubleValue];
+
+            CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
+            annotation.coordinate = coordinate;
+            annotation.title = [post objectForKey:@"text"];
+            annotation.subtitle = [post objectForKey:@"description"];
+
+            
+            [self.mapView addAnnotation:annotation];
 
 
-
-                MKPointAnnotation *annotation = [MKPointAnnotation new];
-                double longitude = [[post objectForKey:@"longitude"]doubleValue];
-                double latitude = [[post objectForKey:@"latitude"]doubleValue];
-
-                CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
-                annotation.coordinate = coordinate;
-                annotation.title = @"test";
-
-                [self.mapView addAnnotation:annotation];
-
-
-                NSLog(@"%@", annotation);
-                NSLog(@"%f", annotation.coordinate.latitude);
-                NSLog(@"%f", annotation.coordinate.longitude);
-
-
-            }
-
-        } else {
-            NSLog(@"Error getting data: %@", error);
-
+            NSLog(@"%@", annotation);
+            NSLog(@"%f", annotation.coordinate.latitude);
+            NSLog(@"%f", annotation.coordinate.longitude);
+            
+            
         }
 
-
         [self.mapView showAnnotations:self.mapView.annotations animated:YES];
+        [self setZoom];
+
     }];
+
 
 
 
@@ -147,7 +143,7 @@
 
     self.postAnnotation = [[MKPointAnnotation alloc] init];
     self.postAnnotation.coordinate = touchMapCoordinate;
-    self.postAnnotation.title = @"Click + button To Add Post";
+    self.postAnnotation.title = @"Click + button To Add  a Post";
 
     [self.mapView addAnnotation:self.postAnnotation];
     [self.mapView selectAnnotation:self.postAnnotation animated:YES];
@@ -156,21 +152,25 @@
 
 //Costumizing the Pin
 -(MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+
     if (annotation == self.mapView.userLocation) {
         return nil;
     }
+
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:nil];
     pin.pinColor = MKPinAnnotationColorPurple;
     pin.canShowCallout =  YES;
-    if ([pin.annotation.title isEqualToString:@"Click + button To Add Post"]) {
+
+    if ([pin.annotation.title isEqualToString:@"Click + button To Add  a Post"]) {
         pin.rightCalloutAccessoryView = nil;
     } else {
-    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     }
-    pin.draggable = NO;
-    pin.image = [UIImage imageNamed:@"RestaurantsIcon"];
-    return pin;
 
+    pin.draggable = NO;
+    pin.image = [UIImage imageNamed:@"pin"];
+
+    return pin;
 }
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
@@ -188,15 +188,26 @@
     }
 }
 
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    self.selectedAnnotation = view.annotation;
+    NSLog(@"---- >>>> %@ <<<< -----", self.selectedAnnotation.postObjectId);
+}
 
 //PopOverSegue Methods
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier  isEqual: @"popover"]) {
-        ShareItViewController *popoverViewContoller =  segue.destinationViewController;
-        popoverViewContoller.modalPresentationStyle = UIModalPresentationPopover;
-        popoverViewContoller.popoverPresentationController.delegate = self;
-        popoverViewContoller.postAnnotation = self.postAnnotation;
+        ShareItViewController *shareItViewController =  segue.destinationViewController;
+        shareItViewController.modalPresentationStyle = UIModalPresentationPopover;
+        shareItViewController.popoverPresentationController.delegate = self;
+        shareItViewController.postAnnotation = self.postAnnotation;
 
+    } else if ([segue.identifier  isEqual: @"popover2"]) {
+        DetailPostInformationViewController *popoverViewContoller =  segue.destinationViewController;
+//        popoverViewContoller.modalPresentationStyle = UIModalPresentationPopover;
+//        popoverViewContoller.popoverPresentationController.delegate = self;
+        SharePostAnnotation *spa = (SharePostAnnotation *)sender;
+        NSLog(@"===== >> %@ <<", spa.postObjectId);
+        popoverViewContoller.selectedPost = spa.postObjectId;
     }
 }
 - (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
@@ -210,13 +221,14 @@
 
 -(void)prepareTutorialSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier  isEqual: @"tutorialSegue"]) {
-        IntroductionViewController *popoverViewContoller =  segue.destinationViewController;
+        ShareItViewController *popoverViewContoller =  segue.destinationViewController;
         popoverViewContoller.modalPresentationStyle = UIModalPresentationPopover;
         popoverViewContoller.popoverPresentationController.delegate = self ;
 
     }
 }
-
+- (IBAction)unwindAndbookit:(UIStoryboardSegue *) segue{
+}
 
 
 //-(IBAction)unwindandBookIt:(UIStoryboardSegue *)segue {

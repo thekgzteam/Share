@@ -18,6 +18,7 @@
 @property UIImagePickerController *picker2;
 @property IBOutlet UIImageView *imageView;
 @property UIImage *image;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityContoller;
 
 @property (weak, nonatomic) IBOutlet UIButton *PostButton;
 
@@ -29,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.activityContoller.hidden = YES;
 
     self.nameTextfield.placeholder = @"Name";
     self.descriptionTextfield.placeholder = @"Description";
@@ -63,14 +65,20 @@
 
 }
 - (IBAction)onPostButtonPressed:(id)sender {
+    [self.activityContoller startAnimating];
+    self.activityContoller.hidden = NO;
+    self.PostButton.enabled = NO;
+
 
     PFObject *textMessage = [PFObject objectWithClassName:@"Post"];
     textMessage[@"text"] = self.nameTextfield.text;
     textMessage[@"description"] = self.descriptionTextfield.text;
     textMessage[@"latitude"] =  [NSNumber numberWithFloat:self.postAnnotation.coordinate.latitude];
     textMessage[@"longitude"] =  [NSNumber numberWithFloat:self.postAnnotation.coordinate.longitude];
-//    textMessage[@"image"] = self.imageView.image;
+    textMessage[@"image"] = UIImagePNGRepresentation(self.imageView.image);
 
+//    NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
+//    PFFile *file = [PFFile fileWithData:imageData];
 
 
 
@@ -85,6 +93,8 @@
 
     [textMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+            [self.activityContoller stopAnimating];
+            self.activityContoller.hidden = YES;
             NSLog(@"The Message Has Been Saved");
             [self postSuccess];
             self.nameTextfield.text = 0;

@@ -22,10 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self queryParseMethod];
-    self.postImage.image = [UIImage imageNamed:@"signature room"];
-    self.profileImage.image = [UIImage imageNamed:@"profilepicture"];
-    self.profileImage.layer.cornerRadius = 30;
 
+    self.profileImage.layer.cornerRadius = 10.0f;
+    self.profileImage.clipsToBounds = YES;
+    self.profileImage.layer.borderWidth = 3.0f;
+    self.profileImage.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.postImage.image = [UIImage imageNamed:@"signature room"];
+    self.profileImage.image = [UIImage imageNamed:@"profileImage"];
+ 
+    NSLog(@"=====>%@", self.selectedPost);
 }
 -(void)queryParseMethod {
     NSLog (@"start query");
@@ -41,9 +46,12 @@
         }
 
         NSLog(@"Qeury is over");
+
     }];
 
 }
+
+
 
 
 

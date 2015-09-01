@@ -8,6 +8,7 @@
 
 #import "AllImagesViewController.h"
 #import "AllImageCollectionViewCell.h"
+#import "PFQueryObjects.h"
 
 @interface AllImagesViewController ()
 
@@ -17,55 +18,66 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self queryParseMethod];
 
+    PFQueryObjects *query = [PFQueryObjects new];
+    [query queryForCategory:self.category withMethod:^(NSArray *array) {
+        self.ImageFilesArray = array;
+        NSLog(@"%@", array);
 
-}
-
--(void)queryParseMethod {
-    NSLog (@"start query");
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            imageFilesArray = [[NSArray alloc] initWithArray:objects];
-        }
-        [self.imageCollection reloadData];
-        NSLog(@"Qeury is over");
     }];
-
 }
 
-    -(NSInteger)numberOfSectionsInTableView:(UICollectionView *)collectionView {
-        return 1;
-    }
 
-    -(NSInteger)collectionView: (UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-        return [imageFilesArray count];
-    }
+//-(void)queryParseMethod {
+//    NSLog (@"start query");
+//    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error) {
+//            imageFilesArray = [[NSArray alloc] initWithArray:objects];
+//        }
+//        [self.imageCollection reloadData];
+//        NSLog(@"Qeury is over");
+//    }];
+//
+//}
+//}
+//-(void)retrieveCoordinatesFromParse {
+//    PFQueryObjects *query = [PFQueryObjects new];
+//    [query queryForCategory:self.images withMethod:^(NSArray *array) {
+//        self.ImageFilesArray = array;
+//    }];
+//    }
+-(NSInteger)numberOfSectionsInTableView:(UICollectionView *)collectionView {
+    return 1;
+}
 
-    -(UICollectionViewCell *)collectionView: (UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+-(NSInteger)collectionView: (UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.ImageFilesArray count];
+}
 
-       NSString *cellidentifier = @"imageCell";
-        AllImageCollectionViewCell *cell = (AllImageCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellidentifier forIndexPath:indexPath];
+-(UICollectionViewCell *)collectionView: (UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
-        PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
-        PFFile *imageFile = [imageObject objectForKey:@"image"];
+   NSString *cellidentifier = @"imageCell";
+    AllImageCollectionViewCell *cell = (AllImageCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellidentifier forIndexPath:indexPath];
 
-        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+    PFObject *imageObject = [self.ImageFilesArray objectAtIndex:indexPath.row];
+    PFFile *imageFile = [imageObject objectForKey:@"image"];
+
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             cell.parseImage.image = [UIImage imageWithData:data];
             cell.parseImageText.text = [imageObject objectForKey:@"text"];
             NSLog (@"getting image");
         }
     }];
-        return cell;
+    return cell;
        
 }
 - (IBAction)onLikeButtonPressed:(id)sender {
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self likeImage:[imageFilesArray objectAtIndex:indexPath.row]];
+    [self likeImage:[self.ImageFilesArray objectAtIndex:indexPath.row]];
 }
 
 -(void) likeImage:(PFObject*)object {

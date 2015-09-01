@@ -37,10 +37,14 @@
     [self retrieveFavoriteImages];
 
 
+    self.profileImage.layer.borderWidth = 4.0f;
+    self.profileImage.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.profileImage.layer.cornerRadius = 10.0f;
+    self.profileImage.clipsToBounds = YES;
 
 
-    self.profileImage.image = [UIImage imageNamed:@"profilepicture"];
-    self.VisualParseImage.image = [UIImage imageNamed:@"profilepicture"];
+    self.profileImage.image = [UIImage imageNamed:@"profileImage"];
+    self.VisualParseImage.image = [UIImage imageNamed:@"profileImage"];
 
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(visualEffectTapped:)];
     tapRecognizer.numberOfTapsRequired = 1;
@@ -113,6 +117,7 @@
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
+     self.sendButton.enabled = YES;
     [UIView animateWithDuration:0.5 animations:^{
         self.dockHeight.constant = 280;
         self.tableViewHeight.constant = 500;
@@ -121,10 +126,6 @@
                          NSLog(@"done");
                      }];
 
-//    if ([self.messageTextfield.text length] != 0) {
-//        [self.sendMessageButton setEnabled:YES];
-//    } else
-//        [self.sendMessageButton setEnabled:NO];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -211,10 +212,12 @@
     textMessage[@"username"] = [PFUser currentUser].username;
         self.dockHeight.constant = 54;
     [self.messageTextfield endEditing:YES];
+    self.sendButton.enabled = NO;
 
     [textMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"The Message Has Been Saved");
+
             self.messageTextfield.text = 0;
             [self retrieveMessageFromParse];
             [self.messageArray removeAllObjects];
@@ -299,19 +302,6 @@
 
     return cell;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @end

@@ -43,4 +43,39 @@
 //    }];
 //
 //    [self presentViewController:alertController animated:YES completion:nil];
+
+
+
+
+
+
+//// - Selecting a row and adding to your favorites
+//-(void)tableView:(UITableView tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    [self likeComment:[self.posts objectAtIndex:indexPath.row]];
+//}
+//
+//// Adding the selected row to
+//-(void)likeComment:(PFObject *)object {
+//    [object addUniqueObject:[PFUser currentUser].objectId forKey:@"comments"];
+//
+//    [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (!error) {
+//            NSLog(@"selected row!");
+//            [self likedSuccess];
+//        }
+//        else {
+//            [self likedFail];
+//        }
+//    }];
+//}
+//
+//-(void) likedSuccess {
+//    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"You have added the comment to your profile" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//    [alert show];
+//
+//}
+//
+//-(void) likedFail {
+//    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Error adding the comment" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//    [alert show];
 @end

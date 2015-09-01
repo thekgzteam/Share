@@ -108,7 +108,7 @@
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)  {
         if (!error) {
             NSLog(@"Registration success!");
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Warning" message:@"Registration success!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Complete" message:@"Registration success!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
 
             [self performSegueWithIdentifier:@"registerSegue" sender:self];
