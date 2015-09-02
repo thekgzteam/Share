@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 Edil Ashimov. All rights reserved.
 //
 
-#import "AllCommentsListViewCell.h"
+#import "SearchTableViewCustomVCell.h"
 #import <Parse/Parse.h>
+#import "SearchTableViewCustomVCell.h"
 
 @interface SearchPostsViewController : UIViewController
 

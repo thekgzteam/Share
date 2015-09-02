@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *parseImageText;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (weak, nonatomic) IBOutlet UIButton *likebuttonfilled;
 
 @end

@@ -25,7 +25,7 @@
     [super viewDidLoad];
     [self retrieveFromParse];
     [self.tableView reloadData];
-    
+
 
     self.searchControllers = [[UISearchController alloc] initWithSearchResultsController:nil];
     self.searchControllers.searchResultsUpdater = self;
@@ -47,7 +47,7 @@
             [self.tableView reloadData];
         } else {
             NSLog(@"Error getting data: %@", error);
-            
+
         }
     }];
 }
@@ -112,14 +112,14 @@
     //[self.filteredResults removeAllObjects];
     NSLog(@"%@", searchController.searchBar.text);
     NSPredicate *predicate = [NSPredicate predicateWithFormat: @"SELF.text contains[c] %@",searchController.searchBar.text];
-    
+
     NSArray *array = [self.posts filteredArrayUsingPredicate:predicate];
     self.filteredResults = (NSArray *)array;
     NSLog(@"%li", array.count);
     [self.tableView reloadData];
 }
 -(IBAction)goBackButton:(id)sender {
-
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

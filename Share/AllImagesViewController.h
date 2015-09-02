@@ -11,9 +11,8 @@
 @interface AllImagesViewController : UIViewController {
 
 }
-@property NSArray *ImageFilesArray;
+@property NSArray *postsArray;
 @property (weak, nonatomic) IBOutlet UICollectionView *imageCollection;
-@property (nonatomic, strong) IBOutlet UICollectionViewFlowLayout *flowLayout;
 @property NSString *category;
 
 

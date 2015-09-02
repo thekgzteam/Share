@@ -14,4 +14,5 @@
 @property NSMutableArray *coordinatesArray;
 @property MKPointAnnotation *postAnnotation;
 @property NSString *category;
+@property NSArray *allPosts;
 @end

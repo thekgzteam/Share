@@ -9,6 +9,7 @@
 #import "CategoriesViewController.h"
 #import "MapViewController.h"
 #import <Parse/Parse.h>
+#import "ShareItViewController.h"
 @interface CategoriesViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *restaurantButton;
 
@@ -41,6 +42,7 @@ CategoriesViewController
     self.otherButton.layer.cornerRadius = 4.0;
     self.businessMeetingButton.layer.cornerRadius = 4.0;
     self.topPatriesButton.layer.cornerRadius = 4.0;
+
 }
 
 
@@ -53,7 +55,6 @@ CategoriesViewController
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier  isEqual: @"categoriesSegue"]) {
         MapViewController *mapViewContoller =  segue.destinationViewController;
-        mapViewContoller.modalPresentationStyle = UIModalPresentationPopover;
         mapViewContoller.category = self.selectedCategory;
     }
 }

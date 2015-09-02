@@ -8,6 +8,9 @@
 #import <Parse/Parse.h>
 #import "MapViewController.h"
 #import "ShareItViewController.h"
+#import "CategoriesViewController.h"
+#import "SharePostAnnotation.h"
+
 
 @interface ShareItViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextfield;
@@ -19,9 +22,7 @@
 @property IBOutlet UIImageView *imageView;
 @property UIImage *image;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityContoller;
-
 @property (weak, nonatomic) IBOutlet UIButton *PostButton;
-
 
 
 @end
@@ -30,12 +31,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.activityContoller.hidden = YES;
 
+    self.activityContoller.hidden = YES;
     self.nameTextfield.placeholder = @"Name";
     self.descriptionTextfield.placeholder = @"Description";
 
-
+    NSLog(@"=====%@====",self.postCategory);
 
 }
 - (IBAction)TakePhoto {
@@ -70,28 +71,26 @@
     self.PostButton.enabled = NO;
 
 
-    PFObject *textMessage = [PFObject objectWithClassName:@"Post"];
-    textMessage[@"text"] = self.nameTextfield.text;
-    textMessage[@"description"] = self.descriptionTextfield.text;
-    textMessage[@"latitude"] =  [NSNumber numberWithFloat:self.postAnnotation.coordinate.latitude];
-    textMessage[@"longitude"] =  [NSNumber numberWithFloat:self.postAnnotation.coordinate.longitude];
-    textMessage[@"image"] = UIImagePNGRepresentation(self.imageView.image);
-
-//    NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
-//    PFFile *file = [PFFile fileWithData:imageData];
+    NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
+    PFFile *file = [PFFile fileWithData:imageData];
 
 
+    
+    PFObject *post = [PFObject objectWithClassName:@"Post"];
+    post[@"text"] = self.nameTextfield.text;
+    post[@"description"] = self.descriptionTextfield.text;
+    post[@"latitude"] =  [NSNumber numberWithFloat:self.postAnnotation.coordinate.latitude];
+    post[@"longitude"] =  [NSNumber numberWithFloat:self.postAnnotation.coordinate.longitude];
+    post[@"image"] = file;
+    post[@"username"] = [PFUser currentUser].username;
+    post[@"category"] = self.postCategory;
+    self.selectedAnnotation.title = self.nameTextfield.text;
+    self.selectedAnnotation.subtitle = self.descriptionTextfield.text;
+//    self.pinAnnotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//    MKPinAnnotationView *selectedAnnotationView = test.superview;
+//    selectedAnnotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 
-
-
-////Getting the Current User's Location
-//    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
-//        if (!error) {
-//            // do something with the new geoPoint
-//        }
-//    }];
-
-    [textMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             [self.activityContoller stopAnimating];
             self.activityContoller.hidden = YES;
@@ -99,21 +98,13 @@
             [self postSuccess];
             self.nameTextfield.text = 0;
             self.descriptionTextfield.text = 0;
-//            self.imageView.image = 0;
             [self dismissViewControllerAnimated:YES completion:NULL];
-
         } else {
             [self postFail];
-            NSLog(@"Error Saving the Message");        }
+            NSLog(@"Error Saving the Message");
+        }
     }];
-
-
 }
-
-
-//insert a user current location to *textMessage[@"location"]
-
-
 
 //AlertViews
 -(void) postSuccess {
@@ -127,24 +118,4 @@
     [alert show];
     
 }
-
-
-////Message Send Button Saving Method
-//- (IBAction)onPostButtonTapped:(id)sender {
-//
-//    PFObject *textMessage = [PFObject objectWithClassName:@"Message"];
-//    textMessage[@"messageText"] = self.messageTextfield.text;
-//
-//    [textMessage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (succeeded) {
-//            NSLog(@"The Message Has Been Saved");
-//            self.messageTextfield.text = 0;
-//            [self.messageTableView reloadData];
-//        } else {
-//            NSLog(@"Error Saving the Message");        }
-//    }];
-//    
-//    
-//}
-
 @end

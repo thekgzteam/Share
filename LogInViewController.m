@@ -1,6 +1,6 @@
 //
 //  RegistrationViewController.m
-//  
+//
 //
 //  Created by Edil Ashimov on 8/17/15.
 //
@@ -30,25 +30,10 @@
     self.loginButton.layer.cornerRadius = 2.0;
 
 
-
-//
-
-//    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-//    loginButton.center = CGPointMake(190, 390.0);
-//    [self.view addSubview:loginButton];
-
-//    CategoriesViewController*vc1 = [[CategoriesViewController alloc] initWithNibName:@"Catergories View Controller" bundle:nil];
-//    [vc1 setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-//    [self presentViewController:vc1 animated:YES completion:nil];
-
     PFUser *user = [PFUser user];
     user.username = self.usernameTextfield.text;
     user.password = self.passwordTextfield.text;
     user.email = @"email@example.com";
-
-
-
-
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -62,14 +47,14 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 
-        UITouch *touch = [[event allTouches] anyObject];
-        if ([self.usernameTextfield isFirstResponder] && [touch view] != self.usernameTextfield)
-            [self.usernameTextfield resignFirstResponder];
-            ([self.passwordTextfield isFirstResponder] && [touch view] != self.passwordTextfield); {
-                [self.passwordTextfield resignFirstResponder];
-        }
-        [super touchesBegan:touches withEvent:event];
-        }
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([self.usernameTextfield isFirstResponder] && [touch view] != self.usernameTextfield)
+        [self.usernameTextfield resignFirstResponder];
+    ([self.passwordTextfield isFirstResponder] && [touch view] != self.passwordTextfield); {
+        [self.passwordTextfield resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
+}
 
 
 
@@ -84,7 +69,7 @@
             NSLog(@"Login user!");
         }
     }];
-
+    
 }
 
 

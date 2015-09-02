@@ -10,8 +10,11 @@
 
 @interface ShareItViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-- (IBAction)ChooseExisting;
-
+@property NSString *postCategory;
 @property MKPointAnnotation *postAnnotation;
+@property MKPointAnnotation *selectedAnnotation;
+@property MKPinAnnotationView *pinAnnotationView;
+
+- (IBAction)ChooseExisting;
 
 @end

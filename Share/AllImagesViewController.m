@@ -10,7 +10,7 @@
 #import "AllImageCollectionViewCell.h"
 #import "PFQueryObjects.h"
 
-@interface AllImagesViewController ()
+@interface AllImagesViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @end
 
@@ -18,49 +18,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    PFQueryObjects *query = [PFQueryObjects new];
-    [query queryForCategory:self.category withMethod:^(NSArray *array) {
-        self.ImageFilesArray = array;
-        NSLog(@"%@", array);
-
-    }];
 }
 
-
-//-(void)queryParseMethod {
-//    NSLog (@"start query");
-//    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (!error) {
-//            imageFilesArray = [[NSArray alloc] initWithArray:objects];
-//        }
-//        [self.imageCollection reloadData];
-//        NSLog(@"Qeury is over");
-//    }];
-//
-//}
-//}
-//-(void)retrieveCoordinatesFromParse {
-//    PFQueryObjects *query = [PFQueryObjects new];
-//    [query queryForCategory:self.images withMethod:^(NSArray *array) {
-//        self.ImageFilesArray = array;
-//    }];
-//    }
 -(NSInteger)numberOfSectionsInTableView:(UICollectionView *)collectionView {
     return 1;
 }
 
 -(NSInteger)collectionView: (UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.ImageFilesArray count];
+    return self.postsArray.count;
 }
 
 -(UICollectionViewCell *)collectionView: (UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
-   NSString *cellidentifier = @"imageCell";
+    NSString *cellidentifier = @"imageCell";
     AllImageCollectionViewCell *cell = (AllImageCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellidentifier forIndexPath:indexPath];
 
-    PFObject *imageObject = [self.ImageFilesArray objectAtIndex:indexPath.row];
+    PFObject *imageObject = [self.postsArray objectAtIndex:indexPath.row];
     PFFile *imageFile = [imageObject objectForKey:@"image"];
 
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -71,13 +44,11 @@
         }
     }];
     return cell;
-       
-}
-- (IBAction)onLikeButtonPressed:(id)sender {
+
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [self likeImage:[self.ImageFilesArray objectAtIndex:indexPath.row]];
+    [self likeImage:[self.postsArray objectAtIndex:indexPath.row]];
 }
 
 -(void) likeImage:(PFObject*)object {
@@ -86,12 +57,13 @@
     [object addUniqueObject:[PFUser currentUser].objectId forKey:@"favorites"];
 
     [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-    if (!error) {
-        NSLog(@"selected picture!");
-        [self likedSuccess];
+        if (!error) {
+            //        self.
+            NSLog(@"selected picture!");
+            [self likedSuccess];
         }
-    else {
-        [self likedFail];
+        else {
+            [self likedFail];
         }
     }];
 }
@@ -105,41 +77,6 @@
 -(void) likedFail {
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"Error liking the image" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
-
 }
-
-- (IBAction)gobackbutton:(id)sender {
-
-    [self dismissViewControllerAnimated:YES completion:nil];
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end
